@@ -90,16 +90,16 @@ html {
   --overlay-color: #FEDA29;
   --overlay-title-color: #ffffff;
   --overlay-description-color: #ffffff;
-  --hyperlink-color: #FEDA29;
-  --hyperlink-alternate-color: #8a7300;
+  --hyperlink-color: #d1a410;
+  --hyperlink-alternate-color: #d1a410;
   --hover-color: #000000;
-  --visited-color: #FEDA29;
+  --visited-color: #d1a410;
   --project-title-color: #000000;
-  --project-sidebar-background-color: orangered;
+  --project-sidebar-background-color: #FEDA29;
   --project-sidebar-text-color: white;
   --heart-color: darkred;
   --holding-page-footer-color: #f8f8ff;
-  --text-selection-background-color: #5200ff;
+  --text-selection-background-color: #FEDA29;
   --linear-gradient-color-1: #ff057c;
   --linear-gradient-color-2: #8d0b93;
   --linear-gradient-color-3: #321575;
@@ -482,7 +482,7 @@ a:active {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 3rem;
-  min-height: 100vh;
+  min-height: 50vh;
   background: var(--background-color-footer);
   padding: 1rem;
 }
