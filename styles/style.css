@@ -225,7 +225,6 @@ em {
 a:link {
   color: var(--hyperlink-color);
   text-decoration: none;
-  font-size:calc(2rem + 2.5vw);
 }
 
 a:visited {
@@ -265,7 +264,9 @@ a:active {
 .colored-link {
   color: var(--hyperlink-alternate-color);
 }
-
+.custom-navigation{
+  font-size:calc(2rem + 2.5vw);
+}
 .custom-navigation:hover {
   background: url(assets/temp/heading-background.svg);
   background-size: 15%;
