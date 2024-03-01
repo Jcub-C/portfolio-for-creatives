@@ -1,114 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Jacob Chong | 30/30 | Interactive UI</title>
+    <meta
+      name="description"
+      content="Student Interactive Project using many UI Essentials. Concept for Movie Review mobile app"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:image" content="screenshot.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link rel="stylesheet" href="./styles/brand-colors.css" />
+    <script
+      src="https://kit.fontawesome.com/8db9ce5559.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
 
-<head>
-  <title>Jcub Creative | Project 3030</title>
-  <meta name="description"
-    content="When writing a meta description, keep it between 140 and 160 characters so Google can display your entire message. Don’t forget to include your keyword!">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:image" content="screenshot.jpg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" href="./styles/brand-colors.css">
-  <script src="https://kit.fontawesome.com/8db9ce5559.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="./styles/style.css">
-</head>
-
-<body class="project-1">
-  <header class="hero-header">
-    <ul class="branding-navigation">
-      <li class="logo"><a href="index.html">
-        <img src="assets/branding-images/logo.svg" />
-        </a></li>
-      <li><a href="work-clean.html" class="custom-navigation">Work</a></li>
-      <!-- <li><a href="about.html" class="custom-navigation">About</a></li> -->
-    </ul>
-  </header>
-  <div class="project-wrapper">
-    <aside class="project-aside">
-      <div class="project-info">
-        <h1 class="project-title">UI Essentials</h1>
-        <p class="project-description">30/30 is an app designed as a university project. The objective was to learn how to use common components like buttons, cards, lists, etc. using Google’s Material Design principles as reference.</p>
-        <p class="project-description">This is a sticky sidebar (<em>.project-aside</em>) so that your project title and description remain
-          visible as you scroll down the page. To remove the sticky sidebar, see <em>Sidebar on Large Devices</em> in
-          style.css.</p>
-      </div>
-      <ul class="project-navigation">
-        <li class="arrow"><a href="#" class="navigation-arrow"><i class="fas fa-arrow-left fa-2x"></i></a></li>
-        <li class="arrow"><a href="project-2.html" class="navigation-arrow"><i class="fas fa-arrow-right fa-2x"></i></a>
+  <body class="project-1">
+    <header class="hero-header">
+      <ul class="branding-navigation">
+        <li class="logo">
+          <a href="index.html">
+            <img src="assets/branding-images/logo.svg" />
+          </a>
         </li>
+        <li><a href="work-clean.html" class="custom-navigation">Work</a></li>
+        <!-- <li><a href="about.html" class="custom-navigation">About</a></li> -->
       </ul>
-    </aside>
-    <main class="project-details">
-      <div class="project-image"><img src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame1.jpg" width="1000" height="1000"
-          alt="A description of the image"></div>
-      <div class="project-image"><img src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame2.jpg" width="1000" height="1000"
-          alt="A description of the image"></div>
-      <div class="project-image"><img src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame3.jpg" width="1000" height="1000"
-            alt="A description of the image"></div>
-      <div class="project-image"><img src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame4.jpg" width="1000" height="1000"
-              alt="A description of the image"></div>
-      <div class="project-image"><img src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame5.jpg" width="1000" height="1000"
-                alt="A description of the image"></div>
-                <div class="project-image"><img src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame6.jpg" width="1000" height="1000"
-                  alt="A description of the image"></div>
-                  <div class="project-image"><img src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame7.jpg" width="1000" height="1000"
-                    alt="A description of the image"></div>
-                    <div class="project-image"><img src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame8.jpg" width="1000" height="1000"
-                      alt="A description of the image"></div>
-                      <div class="project-image"><img src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame9.jpg" width="1000" height="1000"
-                        alt="A description of the image"></div>
-                        <div class="project-image"><img src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame10.jpg" width="1000" height="1000"
-                          alt="A description of the image"></div>
-                          <div class="project-image"><img src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame11.jpg" width="1000" height="1000"
-                            alt="A description of the image"></div>
+    </header>
+    <div class="project-wrapper">
+      <aside class="project-aside">
+        <div class="project-info">
+          <object
+            type="image/svg+xml"
+            data="assets/project-images/3030/3030-logo-animated.svg"
+            class="project-logos"
+          ></object>
+          <h2>UI Essentials</h2>
+          <p class="project-description">
+            30/30 is an app designed as a university project. The objective was
+            to learn how to use common components like buttons, cards, lists,
+            etc. using Google’s Material Design principles as reference.
+          </p>
+          <h2>The Challenge</h2>
+          <p class="project-description">
+            What kind of app could I create that would utilize all these
+            components? A movie review app would be perfect as it has a lot of
+            information to convey tackle.
+          </p>
+          <h2>Problem Statement</h2>
+          <p class="project-description">
+            With such a saturated market of rating and ranking media, especially
+            movies, how can I create an app that would stand out? One problem I
+            can tackle is the actual scores themselves. Why not score movies out
+            of 30
+          </p>
+        </div>
+        <ul class="project-navigation">
+          <li class="arrow">
+            <a href="#" class="navigation-arrow"
+              ><i class="fas fa-arrow-left fa-2x"></i
+            ></a>
+          </li>
+          <li class="arrow">
+            <a href="project-2.html" class="navigation-arrow"
+              ><i class="fas fa-arrow-right fa-2x"></i
+            ></a>
+          </li>
+        </ul>
+      </aside>
+      <main class="project-details">
+        <div class="project-image">
+          <img
+            src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame1.jpg"
+            width="1000"
+            height="1000"
+            alt="A description of the image"
+          />
+        </div>
+        <div class="project-image">
+          <img
+            src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame2.jpg"
+            width="1000"
+            height="1000"
+            alt="A description of the image"
+          />
+        </div>
+        <div class="project-image">
+          <img
+            src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame3.jpg"
+            width="1000"
+            height="1000"
+            alt="A description of the image"
+          />
+        </div>
+        <div class="project-image">
+          <img
+            src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame4.jpg"
+            width="1000"
+            height="1000"
+            alt="A description of the image"
+          />
+        </div>
+        <div class="project-image">
+          <img
+            src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame5.jpg"
+            width="1000"
+            height="1000"
+            alt="A description of the image"
+          />
+        </div>
+        <div class="project-image">
+          <img
+            src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame6.jpg"
+            width="1000"
+            height="1000"
+            alt="A description of the image"
+          />
+        </div>
+        <div class="project-image">
+          <img
+            src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame7.jpg"
+            width="1000"
+            height="1000"
+            alt="A description of the image"
+          />
+        </div>
+        <div class="project-image">
+          <img
+            src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame8.jpg"
+            width="1000"
+            height="1000"
+            alt="A description of the image"
+          />
+        </div>
+        <div class="project-image">
+          <img
+            src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame9.jpg"
+            width="1000"
+            height="1000"
+            alt="A description of the image"
+          />
+        </div>
+        <div class="project-image">
+          <img
+            src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame10.jpg"
+            width="1000"
+            height="1000"
+            alt="A description of the image"
+          />
+        </div>
 
-                            <div class="project-image"><img src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame12.jpg" width="1000" height="1000"
-                              alt="A description of the image"></div>
-                              <div class="project-image"><img src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame13.jpg" width="1000" height="1000"
-                                alt="A description of the image"></div>
-                                <div class="project-image"><img src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame14.jpg" width="1000" height="1000"
-                                  alt="A description of the image"></div>
+        <div class="project-image">
+          <img
+            src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame11.jpg"
+            width="1000"
+            height="1000"
+            alt="A description of the image"
+          />
+        </div>
+        <div class="project-image">
+          <img
+            src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame12.jpg"
+            width="1000"
+            height="1000"
+            alt="A description of the image"
+          />
+        </div>
+        <div class="project-image">
+          <img
+            src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame13.jpg"
+            width="1000"
+            height="1000"
+            alt="A description of the image"
+          />
+        </div>
+        <div class="project-image">
+          <img
+            src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame14.jpg"
+            width="1000"
+            height="1000"
+            alt="A description of the image"
+          />
+        </div>
+        <div class="project-image">
+          <img
+            src="assets/project-images/3030/Jacob-Chong-3030-Interactive-Frame15.jpg"
+            width="1000"
+            height="1000"
+            alt="A description of the image"
+          />
+        </div>
+      </main>
+    </div>
+    <ul class="global-footer">
+      <li class="footer-item-1">
+        <h2>Awards &amp; Recognition</h2>
+        <ul class="socials-list">
+          <li class="social-item">
+            <a href="https://theliar.capilanou.ca/art-and-design/"
+              >The Liar Design Finalist 2024</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="footer-item-2">
+        <h2>Contact &amp; Social</h2>
+        <ul class="socials-list">
+          <li class="social-item">
+            <a href="https://www.instagram.com/jcubdoesstuff/"
+              ><i class="fa-brands fa-square-instagram"></i> Insta</a
+            >
+          </li>
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/jacob-chong-a61736210/"
+              ><i class="fa-brands fa-linkedin"></i> LinkedIn</a
+            >
+          </li>
+          <li class="social-item">
+            <a href="https://www.behance.net/jacobchong1"
+              ><i class="fa-brands fa-square-behance"></i> Behance</a
+            >
+          </li>
+          <li class="social-item">
+            <a href="mailto:jcubcreative@gmail.com"
+              ><i class="fa-solid fa-envelope"></i> Email</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="footer-item-4">
+        <p class="fineprint">
+          &copy; 2024. Coded using flexbox + CSS Grid by Jacob Chong.
+        </p>
+      </li>
+    </ul>
+    <div id="myID" class="bottomMenu hide">
+      <a href="project-2.html">Next Project</a>
+    </div>
 
-    </main>
+    <script>
+      myID = document.getElementById("myID");
 
-  </div>
-  <ul class="global-footer">
-    <li class="footer-item-1">
-      <h2>Awards &amp; Recognition</h2>
-      <ul class="socials-list">
-        <li class="social-item"><a href="https://theliar.capilanou.ca/art-and-design/">The Liar Design Finalist 2024</a></li>
-      </ul>
-    </li>
-    <li class="footer-item-2">
-      <h2>Contact &amp; Social</h2>
-      <ul class="socials-list">
-        <li class="social-item"><a href="https://www.instagram.com/jcubdoesstuff/"><i class="fa-brands fa-square-instagram"></i> Insta</a></li>
-        <li class="social-item"><a href="https://www.linkedin.com/in/jacob-chong-a61736210/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
-        <li class="social-item"><a href="https://www.behance.net/jacobchong1"><i class="fa-brands fa-square-behance"></i> Behance</a></li>
-        <li class="social-item"><a href="mailto:jcubcreative@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a></li>
-      </ul>
-    </li>
-    <li class="footer-item-4">
-      <p class="fineprint">&copy; 2024. Coded using flexbox + CSS Grid by Jacob Chong.</p>
-    </li>
-  </ul>
-  <div id="myID" class="bottomMenu hide"><a href="project-2.html">Next Project</a></div>
+      var myScrollFunc = function () {
+        var y = window.scrollY;
+        if (y >= 800) {
+          myID.className = "bottomMenu show";
+        } else {
+          myID.className = "bottomMenu hide";
+        }
+      };
 
-  <script>
-    myID = document.getElementById("myID");
-
-    var myScrollFunc = function () {
-      var y = window.scrollY;
-      if (y >= 800) {
-        myID.className = "bottomMenu show"
-      } else {
-        myID.className = "bottomMenu hide"
-      }
-    };
-
-    window.addEventListener("scroll", myScrollFunc);
-  </script>
-</body>
-
+      window.addEventListener("scroll", myScrollFunc);
+    </script>
+  </body>
 </html>
