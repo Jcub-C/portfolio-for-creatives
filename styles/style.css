@@ -591,27 +591,36 @@ a:active {
 ██   ██  ██████  ███████ ██████  ██ ██   ████  ██████  
                                                        
 */
-
+.holding-page-svg {
+  width: 70%;
+  position: relative; 
+z-index: -1;
+}
+.holding-page-link{
+z-index: 1;
+width:100%;
+}
+.holding-page-span{
+  display: flex;
+  justify-content: center;
+  width:100%;
+}
 .holding-page-wrapper {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr auto;
-  place-items: center;
-  text-align: center;
+  grid-template-columns: 100%;
+  grid-template-rows: 80% 20%;
   width: 100%;
   min-height: 100vh;
-  /* Delete the following if you do not want a grainy gradient background on the holding page */
-  background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 1),
-      var(--background-color-holding-page)
-    ),
-    url(/assets/temp/noise.svg);
-  /* For more on grainy gradients see https://grainy-gradients.vercel.app/ */
+  background: pink;
 }
 
 .holding-page-animation {
-  margin-bottom: 1rem;
+  grid-row-start: 1;
+  margin-bottom: 0rem;
+  display:flex;
+  justify-content: center;
+align-items: center;
+background-color: var(--background-color);
 }
 
 .holding-page-title {
@@ -620,10 +629,14 @@ a:active {
 }
 
 .holding-page-footer {
-  display: grid;
-  place-items: center;
-  min-height: 10vh;
+  grid-row-start:2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  height:100%;
+
+  background-color: black;
 }
 
 .holding-page-copyright {
