@@ -23,7 +23,7 @@ Imported stylesheets. Remove the ones you do not want to use.
 ██ ██      ██ ██       ██████  ██   ██    ██         ██████ ███████ ███████ 
 
 */
-  @import url("make-something-fly.css");
+@import url("make-something-fly.css");
 @import url("animated-gradient.css");
 @import url("text-stroke.css");
 @import url("stroke-shadow.css");
@@ -572,7 +572,7 @@ a:active {
   display: flex;
   flex-direction: column;
   align-self: center;
-  background-image: color:black;
+  background-image: black;
   /* Delete the following if you do not want a gradient background on the project page */
   /* linear-gradient(
     -225deg,
