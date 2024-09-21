@@ -71,6 +71,9 @@ html {
   --body-typeface: "Inter", sans-serif;
   --heading-typeface: "Exo 2", sans-serif;
   --project-title-typeface: "Eczar", serif;
+  --temp-color-1: pink;
+  --temp-color-2: #bc5050;
+  --temp-color-3: rgb(153, 51, 146);
   --background-color: #f3f3f3;
   --background-color-about: #f3f3f3;
   --background-color-footer: #ffffff;
@@ -314,7 +317,7 @@ nav
   flex-direction: column;
 }
 .navbar {
-  background-color: #5c7aff;
+  background-color: var(--temp-color-1);
   padding: 2vw 5vw 2vw 5vw;
   display: flex;
   justify-content: space-between;
@@ -335,9 +338,12 @@ nav
   margin-top: 17vw;
   width: 100vw;
   height: 17vw;
-  display: none;
-  background: black;
-  transition: all 0.3s ease 0s, visibility 0s linear 0.3s;
+  display: flex;
+  background: var(--temp-color-3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease 0s, height 0s step-end 0.4s,
+    visbility 0s step-end 0.4s;
 }
 
 .menu li {
@@ -353,7 +359,9 @@ nav
 }
 
 .menu li a:hover {
-  background-color: black;
+  background-color: var(--temp-color-2);
+  color: black;
+  transition: all 0.4s;
 }
 
 /* Checkbox (menu toggle) hidden */
@@ -371,6 +379,13 @@ nav
   font-size: 1.5em;
 }
 
+/*Intro*/
+.intro {
+  margin: 4vw 12vw;
+  background-color: var(--temp-color-2);
+}
+.intro-headline-wrapper {
+}
 /* Work Page Layout
 
 ██     ██  ██████  ██████  ██   ██     ██████   █████   ██████  ███████ 
@@ -860,6 +875,34 @@ a.sub-navigation-link:hover {
 /* Large devices (desktops, 992px and up) */
 
 @media (min-width: 992px) {
+  /*nav*/
+  .navwrapper {
+    flex-direction: row; /*changed*/
+  }
+  .navbar {
+    height: 15vh; /*changed*/
+  }
+  .logo img {
+    height: 15vh; /*changed*/
+  }
+  .menu-icon {
+    visibility: hidden; /*changed*/
+  }
+  .menu {
+    justify-content: end; /*changed*/
+    flex-direction: row; /*changed*/
+    position: relative; /*changed*/
+    padding-right: 3vw; /*changed*/
+    margin-top: 0vw; /*changed*/
+    width: 100%; /*changed*/
+    height: 15vh; /*changed*/
+    display: flex; /*changed*/
+    background: var(--temp-color-1); /*changed*/
+  }
+  .menu li a {
+    color: black; /*changed*/
+  }
+
   .holding-page-title {
     font-size: 2rem;
   }
