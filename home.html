@@ -49,14 +49,14 @@
                     </a>
                 </div>
                 <!--Nav burger menu for mobile-->
-                <input type="checkbox" id="menu-toggle"/>
-                <label for="menu-toggle" class="menu-icon">
-                    &#9776 <!--Hamburger Icon-->
-                </label>
+                <div class="burger-container">
+                  <input type="checkbox" id="menu-toggle" class="burger" role="button">
+                  <label for="menu-toggle" id="menu-icon" class="menu-icon" aria-label="Display the menu"></label>
+                </div>
             </div>
-            <ul class="menu">
-                <li><a href="about.html" class="custom-navigation">about</a></li>
-                <li><a href="playground.html" class="custom-navigation">fun</a></li>
+            <ul id= "menu" class="menu visuallyhidden hidden">
+                <li><a href="about.html" class="custom-navigation nav1">about</a></li>
+                <li><a href="playground.html" class="custom-navigation nav2">fun</a></li>
             </ul>
         </nav>
       </header>

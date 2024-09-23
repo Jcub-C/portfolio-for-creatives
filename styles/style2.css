@@ -23,7 +23,7 @@ Imported stylesheets. Remove the ones you do not want to use.
 ██ ██      ██ ██       ██████  ██   ██    ██         ██████ ███████ ███████ 
 
 */
-  @import url("make-something-fly.css");
+@import url("make-something-fly.css");
 @import url("animated-gradient.css");
 @import url("text-stroke.css");
 @import url("stroke-shadow.css");
@@ -262,15 +262,6 @@ a:active {
 .colored-link {
   color: var(--hyperlink-alternate-color);
 }
-.custom-navigation {
-  font-size: calc(2rem + 2.5vw);
-}
-.custom-navigation:hover {
-  background: url(assets/temp/heading-background.svg);
-  background-size: 15%;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
 
 .heart {
   color: var(--heart-color);
@@ -300,17 +291,106 @@ a:active {
   margin-bottom: 1rem;
 }
 
-/* Home 
-██   ██  ██████  ███    ███ ███████ 
-██   ██ ██    ██ ████  ████ ██      
-███████ ██    ██ ██ ████ ██ █████   
-██   ██ ██    ██ ██  ██  ██ ██      
-██   ██  ██████  ██      ██ ███████                                            
+/* Nav
+
+███    ██  █████  ██    ██ 
+████   ██ ██   ██ ██    ██ 
+██ ██  ██ ███████ ██    ██ 
+██  ██ ██ ██   ██  ██  ██  
+██   ████ ██   ██   ████                        
+
 */
 
-/*
-nav
-*/
+/*nav burger icon*/
+.burger-container {
+  background:pink;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:0vw;
+}
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  --s: 5vw; /* size */
+  --c: black; /* color */
+  --bg: #0000;/*background color*/
+  --trans:#0000;/*everything transparent*/
+
+  height: var(--s);
+  aspect-ratio: 4/3;
+  border: none;/*changed from none*/
+  margin: 0;/*changed by adding at all*/
+  padding: 0;/*changed from 0*/
+  border-inline: calc(var(--s)/2) solid var(--bg); /*white mask that the bars fade into*/
+  box-sizing: content-box;
+  --_g1: linear-gradient(var(--c) 20%,var(--trans) 0 80%,var(--c) 0)  
+         no-repeat content-box border-box; /*the 20% is top bar color 80% is bottom bar*/
+  --_g2: radial-gradient(circle closest-side at 50% 12.5%,var(--c) 95%,var(--trans)) 
+         repeat-y content-box border-box; /*the rounded bits of the burger on top and bottom*/
+  background: 
+    var(--_g2) left  var(--_p,0px) top,
+    var(--_g1) left  calc(var(--s)/10 + var(--_p,0px)) top,
+    var(--_g2) right var(--_p,0px) top,
+    var(--_g1) right calc(var(--s)/10 + var(--_p,0px)) top;
+  background-size: 
+    20% 80%, /*refers to background 1 and 3 which are the radial gradients for top and bottom bar first number the width of the gradient but visually refers to how close to the middle the dots are 100% equals in the middle. The second number refers to the height of the backgrounds. Because it is set to repeat-y if it is smaller than 100% you get a repeated background in the form of the bottom radial gradients  */
+    50% 100%;/*similar concept above but for the top and bottom bars first is width again and second is height*/
+  position: relative;
+  /*clip-path: inset(0 25%);*//*defines which part of the element is visible by creating a clipping area. 0 means no clipping at the top or bottom 25% means 25% of the width is hidden on the left and right side. From what I can tell you can have it at 0% and it won't effect the animation. With it, it hides the border-inline bars that we used earlier to hide the bars disappearing*/
+  -webkit-mask: linear-gradient(90deg,var(--trans) 20%,#000 25% 75%,var(--trans) 80%);/*similar to clip-path but it creates a gradient */
+  cursor: pointer;
+  mask: linear-gradient(90deg, var(--trans) 20%, #000 25% 75%, var(--trans) 80%); /* Standard */
+  transition: 
+    background-position .3s var(--_s,.3s), 
+    clip-path 0s var(--_s,.6s),
+    transform 0.3s ease;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+}
+.menu-icon:before,
+.menu-icon:after/*defines the bars that are in the middle and that will make up the x before is the bar the goes like \ and after goes like /*/{
+  content:"";
+  position: absolute;/*These pseudo-elements are positioned relative to the .menu element (since the parent has position: relative*/
+  border-radius: var(--s); /*rounds the corners*/
+  inset: 40% 0; /*inset: 40% 0; places the pseudo-element 40% from the top and bottom of the parent element, leaving 0 space on the left and right. This ensures that the pseudo-element is vertically centered within the .menu and occupies full width.*/
+  background: var(--c);/*sets color of bar*/
+  transition: transform .3s calc(.3s - var(--_s,.3s));
+}/* This section sets up the middle bar for the hamburger*/
+
+.menu-icon:before,
+.menu-icon:after {
+  transform: rotate(0deg);
+}
+
+.menu-icon.open {
+  clip-path: inset(0);/*removes any clip-path set earlier when in X form*/
+  --_p: calc(-1*var(--s));
+  --_s: 0s;
+}
+.menu-icon.open:before {
+  transform: rotate(45deg);
+  
+}
+.menu-icon.open:after {
+  transform: rotate(-45deg);
+}
+.menu-icon:focus-visible {
+  clip-path: none;
+  -webkit-mask: none;
+  mask:none;
+  border: none;
+  outline: 2px solid var(--c);
+  outline-offset: 5px;
+}
+
+/*nav menu*/
+.custom-navigation {/*nav link font*/
+  font-size: calc(2rem + 2.5vw);
+}
 .navwrapper {
   position: relative;
   display: flex;
@@ -330,54 +410,94 @@ nav
 }
 .menu {
   list-style: none;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   position: absolute;
   padding-bottom: 0vw;
   margin-top: 17vw;
-  width: 100vw;
-  height: 17vw;
-  display: flex;
-  background: var(--temp-color-3);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease 0s, height 0s step-end 0.4s,
-    visbility 0s step-end 0.4s;
+  margin-left:35vw;
+  width: 65vw;
+  height: 50vh;
+  display: flex;/*changed*/
+  /*background: linear-gradient(90deg,#0000 0 40%,green 0);*/
+  background:black;
+  transition: all 0.4s ease-out 0s;
 }
 
 .menu li {
   text-align: center;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start slightly below their final position */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+.menu li:nth-child(1) {
+  transition-delay: 0.3s;
+}
+.menu li:nth-child(2) {
+  transition-delay: 0.6s;
+}
+.menu li:nth-child(3) {
+  transition-delay: 0.9s;
 }
 
+/* On menu visibility change */
+.menu.visible li {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Move to final position */
+}
+/* default look */
 .menu li a {
-  font-size: 4vw;
+  font-size: 7vw;
   display: flex;
-  padding: 1vw;
+  padding: 5vh;
   color: white;
   text-decoration: none;
 }
-
+/* Hover Styles*/
 .menu li a:hover {
-  background-color: var(--temp-color-2);
-  color: black;
-  transition: all 0.4s;
+  background-color: var(--temp-color-3);
+  color:black;
+  transition:all 0.4s;
 }
+
 
 /* Checkbox (menu toggle) hidden */
 #menu-toggle {
   display: none;
 }
 
-/* Hamburger icon styles */
-.menu-icon {
+/* Hamburger icon original obsolete due to fancier version*/
+/*.menu-icon {
   display: block;
   cursor: pointer;
+  transition: transform 0.3s ease;
   color: white;
   padding: 1em;
   text-align: right;
   font-size: 1.5em;
+}*/
+.hidden {
+  display: none;
 }
+
+.visuallyhidden {
+  opacity: 0;
+  margin-left: 100vw;
+}
+.menu.visuallyhidden li a{
+  opacity:0;
+}
+
+/* Home 
+
+██   ██  ██████  ███    ███ ███████ 
+██   ██ ██    ██ ████  ████ ██      
+███████ ██    ██ ██ ████ ██ █████   
+██   ██ ██    ██ ██  ██  ██ ██      
+██   ██  ██████  ██      ██ ███████                                            
+
+*/
 
 /*Intro*/
 .intro {
@@ -386,6 +506,7 @@ nav
 }
 .intro-headline-wrapper {
 }
+
 /* Work Page Layout
 
 ██     ██  ██████  ██████  ██   ██     ██████   █████   ██████  ███████ 
@@ -858,51 +979,75 @@ a.sub-navigation-link:hover {
 /* Medium devices (tablets, 768px and up) */
 
 @media (min-width: 768px) {
-  .menu {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .menu li {
-    display: inline;
-  }
-
-  .menu-icon {
-    display: none;
-  }
+  
 }
 
 /* Large devices (desktops, 992px and up) */
 
 @media (min-width: 992px) {
-  /*nav*/
-  .navwrapper {
-    flex-direction: row; /*changed*/
-  }
-  .navbar {
-    height: 15vh; /*changed*/
-  }
-  .logo img {
-    height: 15vh; /*changed*/
-  }
-  .menu-icon {
-    visibility: hidden; /*changed*/
-  }
-  .menu {
-    justify-content: end; /*changed*/
-    flex-direction: row; /*changed*/
-    position: relative; /*changed*/
-    padding-right: 3vw; /*changed*/
-    margin-top: 0vw; /*changed*/
-    width: 100%; /*changed*/
-    height: 15vh; /*changed*/
-    display: flex; /*changed*/
-    background: var(--temp-color-1); /*changed*/
-  }
-  .menu li a {
-    color: black; /*changed*/
-  }
 
+    /* Nav
+
+    ██   █  ███  █   █ 
+    █ ██ █ █████ █   █ 
+    █   ██ █   █  ███
+
+    */
+  
+    .navwrapper {
+      flex-direction: row; /*changed*/
+    }
+    .navbar {
+      height: 15vw; /*changed*/
+      max-height: 200px ;/*changed*/
+    }
+    .logo img {
+      height: 15vw; /*changed*/
+      max-height: 200px;/*changed*/
+    }
+    .menu-icon {
+      visibility: hidden; /*changed*/
+      display:none;
+    }
+    .menu {
+      justify-content: end; /*changed*/
+      flex-direction: row; /*changed*/
+      position: relative; /*changed*/
+      padding-right: 3vw; /*changed*/
+      margin-top: 0vw; /*changed*/
+      margin-left:0vw; /*changed*/
+      width: 100%; /*changed*/
+      height: 15vw; /*changed*/
+      max-height: 200px ; /*changed*/
+      display: flex; /*changed*/
+      align-items: center;/*changed*/
+      background: var(--temp-color-1); /*changed*/
+      transition:all 0s ease 0s;
+    }
+    .menu li a {
+      color: black; /*changed*/
+      font-size:clamp(20px,4vw,70px);
+    }
+    .menu ul {
+      width: 100%;
+    }
+    .menu li {
+      width: clamp(0px,12.5vw,350px);
+      display: flex;
+      justify-content: end;
+      opacity:1;
+      transform: translateY(0px);
+    }
+    .hidden {
+      display:flex;
+    }
+    .visuallyhidden {
+      opacity: 1;
+    }
+    .menu.visuallyhidden li a{
+      opacity:1;
+    }
+  
   .holding-page-title {
     font-size: 2rem;
   }
