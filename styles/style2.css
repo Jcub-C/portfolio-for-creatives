@@ -72,9 +72,20 @@ html {
   --body-typeface: "Poppins", sans-serif;
   --heading-typeface: "Silkscreen", sans-serif;
   --project-title-typeface: "Eczar", serif;
-  --temp-color-1: pink;
-  --temp-color-2: #bc5050;
-  --temp-color-3: rgb(153, 51, 146);
+  /*primary colors*/
+  --bg-color: white;
+  --primary-color: #2167db;
+  --secondary-color: #feda29;
+  --dark-color: black;
+  --transparent: rgba(0, 0, 0, 0);
+
+  /*brand colors*/
+  --blue1: #2167db; /*blue for white*/
+  --blue2: #3f7adc; /*blue for black*/
+  --yellow1: #feda29; /*brand yellow*/
+  --light: white;
+  --dark: black;
+
   --background-color: #f3f3f3;
   --background-color-about: #f3f3f3;
   --background-color-footer: #ffffff;
@@ -303,11 +314,12 @@ a:active {
 
 /*nav burger icon*/
 .burger-container {
-  background: pink;
+  background: var(--transparent);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0vw;
+  z-index: 1;
 }
 #menu-toggle {
   display: none;
@@ -315,9 +327,8 @@ a:active {
 
 .menu-icon {
   --s: 5vw; /* size */
-  --c: black; /* color */
+  --dark: black; /* color */
   --bg: #0000; /*background color*/
-  --trans: #0000; /*everything transparent*/
 
   height: var(--s);
   aspect-ratio: 4/3;
@@ -326,12 +337,16 @@ a:active {
   padding: 0; /*changed from 0*/
   border-inline: calc(var(--s) / 2) solid var(--bg); /*white mask that the bars fade into*/
   box-sizing: content-box;
-  --_g1: linear-gradient(var(--c) 20%, var(--trans) 0 80%, var(--c) 0) no-repeat
-    content-box border-box; /*the 20% is top bar color 80% is bottom bar*/
+  --_g1: linear-gradient(
+      var(--dark) 20%,
+      var(--transparent) 0 80%,
+      var(--dark) 0
+    )
+    no-repeat content-box border-box; /*the 20% is top bar color 80% is bottom bar*/
   --_g2: radial-gradient(
       circle closest-side at 50% 12.5%,
-      var(--c) 95%,
-      var(--trans)
+      var(--dark) 95%,
+      var(--transparent)
     )
     repeat-y content-box border-box; /*the rounded bits of the burger on top and bottom*/
   background: var(--_g2) left var(--_p, 0px) top,
@@ -345,16 +360,16 @@ a:active {
   /*clip-path: inset(0 25%);*/ /*defines which part of the element is visible by creating a clipping area. 0 means no clipping at the top or bottom 25% means 25% of the width is hidden on the left and right side. From what I can tell you can have it at 0% and it won't effect the animation. With it, it hides the border-inline bars that we used earlier to hide the bars disappearing*/
   -webkit-mask: linear-gradient(
     90deg,
-    var(--trans) 20%,
+    var(--transparent) 20%,
     #000 25% 75%,
-    var(--trans) 80%
+    var(--transparent) 80%
   ); /*similar to clip-path but it creates a gradient */
   cursor: pointer;
   mask: linear-gradient(
     90deg,
-    var(--trans) 20%,
+    var(--transpa) 20%,
     #000 25% 75%,
-    var(--trans) 80%
+    var(--transparent) 80%
   ); /* Standard */
   transition: background-position 0.3s var(--_s, 0.3s),
     clip-path 0s var(--_s, 0.6s), transform 0.3s ease;
@@ -368,7 +383,7 @@ a:active {
   position: absolute; /*These pseudo-elements are positioned relative to the .menu element (since the parent has position: relative*/
   border-radius: var(--s); /*rounds the corners*/
   inset: 40% 0; /*inset: 40% 0; places the pseudo-element 40% from the top and bottom of the parent element, leaving 0 space on the left and right. This ensures that the pseudo-element is vertically centered within the .menu and occupies full width.*/
-  background: var(--c); /*sets color of bar*/
+  background: var(--dark); /*sets color of bar*/
   transition: transform 0.3s calc(0.3s - var(--_s, 0.3s));
 } /* This section sets up the middle bar for the hamburger*/
 
@@ -381,6 +396,11 @@ a:active {
   clip-path: inset(0); /*removes any clip-path set earlier when in X form*/
   --_p: calc(-1 * var(--s));
   --_s: 0s;
+  --_g1: linear-gradient(
+    var(--transparent) 20%,
+    var(--transparent) 0 80%,
+    var(--transparent) 0
+  );
 }
 .menu-icon.open:before {
   transform: rotate(36.36deg);
@@ -393,14 +413,17 @@ a:active {
   -webkit-mask: none;
   mask: none;
   border: none;
-  outline: 2px solid var(--c);
+  outline: 2px solid var(--dark);
   outline-offset: 5px;
 }
 
 /*nav menu*/
+.nav {
+  position: sticky;
+  top: 0px;
+}
 .custom-navigation {
   /*nav link font*/
-  font-size: calc(2rem + 2.5vw);
   font-family: var(--heading-typeface);
 }
 .navwrapper {
@@ -409,7 +432,7 @@ a:active {
   flex-direction: column;
 }
 .navbar {
-  background-color: var(--temp-color-1);
+  background-color: var(--bg-color);
   padding: 2vw 5vw 2vw 5vw;
   display: flex;
   justify-content: space-between;
@@ -478,7 +501,7 @@ a:active {
 }
 /* default look */
 .menu li a {
-  font-size: 7vw;
+  font-size: calc(2rem + 2.5vw);
   display: flex;
   padding: 5vh;
   color: white;
@@ -486,8 +509,7 @@ a:active {
 }
 /* Hover Styles*/
 .menu li a:hover {
-  background-color: var(--temp-color-3);
-  color: black;
+  color: var(--secondary-color);
   transition: all 0.4s;
 }
 
@@ -531,7 +553,6 @@ a:active {
 
 .intro {
   margin: 4vw 12vw;
-  background-color: var(--temp-color-2);
 }
 .intro-headline-wrapper {
 }
@@ -795,7 +816,7 @@ a:active {
   grid-template-rows: 80% 20%;
   width: 100%;
   min-height: 100vh;
-  background: pink;
+  background: var(--bg-color);
 }
 
 .holding-page-animation {
@@ -1043,48 +1064,24 @@ a.sub-navigation-link:hover {
   }
   .menu-icon {
     --s: 3vw;
-  /* .menu-icon {
-    visibility: hidden; 
-    display: none;
   }
-  .menu {
-    justify-content: end; 
-    flex-direction: row; 
-    position: relative; 
-    padding-right: 3vw; 
-    margin-top: 0vw; 
-    margin-left: 0vw; 
-    width: 100%; 
-    height: 15vw; 
-    max-height: 10vh;
-    display: flex; 
-    align-items: center; 
-    background: var(--temp-color-1); 
-    transition: all 0s ease 0s;
+  .menu-icon.open:before,
+  .menu-icon.open:after {
+    background-color: var(--light);
   }
   .menu li a {
-    color: black; 
-    font-size: clamp(20px, 4vw, 40px);
+    font-size: calc(1rem + 2.5vw);
   }
-  .menu ul {
-    width: 100%;
-  }
-  .menu li {
-    width: clamp(0px, 12.5vw, 350px);
-    display: flex;
-    justify-content: end;
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  .hidden {
-    display: flex;
+  .menu {
+    margin-left: 60vw;
+    width: 40vw;
+    margin-top: 0vh;
+    padding-top: 20vh;
+    height: 100vh;
   }
   .visuallyhidden {
-    opacity: 1;
+    margin-left: 100vw;
   }
-  .menu.visuallyhidden li a {
-    opacity: 1;
-  } */
 
   /* Work
     █     █  ████  ████  █  █ 
