@@ -449,8 +449,7 @@ a:active {
 }
 .home_logo {
   width: auto;
-  height: auto;
-  pointer-events: none;
+  height: auto;z
 }
 #svgStatic {
   width: auto;
@@ -459,7 +458,7 @@ a:active {
 #svgAnimated {
   width: auto;
   height: 15vw;
-  display: none;
+  /* display: none; */
 }
 .menu {
   list-style: none;
@@ -1057,7 +1056,7 @@ a.sub-navigation-link:hover {
   #svgAnimated {
     height: 23vw; /*changed*/
     max-height: 19.5vh; /*changed*/
-    display: block;
+    /* display: block; */
   }
   #svgStatic {
     display: none;
