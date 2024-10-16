@@ -22,6 +22,7 @@
     <!--link to javascript-->
     <script src="./js/javascript.js" defer></script>
     <script src="./js/project_replace.js" defer></script>
+    <script src="./js/color-change.js" defer></script>
 
     <!--link to css style sheet-->
     <link rel="stylesheet" href="./styles/style2.css" />
@@ -47,10 +48,14 @@
                       type="image/svg+xml"
                       data="assets/branding-images/jacob-chong--ui-ux-interactive-designer--logo-animation.svg"
                       class="home_logo"
+                      id="svgAnimated"
                     ></object>
-                    <img src="assets/branding-images/jacob-chong--ui-ux-interactive-designer--logo.svg"
-                    alt="Logo"
-                    class="home_logo">
+                    <object
+                      type="image/svg+xml"
+                      data="assets/branding-images/jacob-chong--ui-ux-interactive-designer--logo.svg"
+                      class="home_logo"
+                      id="svgStatic"
+                    ></object>
                     </span>
                     </a>
                 </div>
@@ -120,6 +125,8 @@
           </p>
         </div>
       </section>
+      <button id="colorChange" onclick="changeLogoColor()">Change Color</button>
+      <button id="colorChangeBack" onclick="changeLogoColorBack()">Change Color</button>
     </main>
 
     <!-- 
