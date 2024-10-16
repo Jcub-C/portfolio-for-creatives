@@ -451,11 +451,11 @@ a:active {
   width: auto;
   height: auto;z
 }
-#svgStatic {
+.logo img {
   width: auto;
   height: 13vw;
 }
-#svgAnimated {
+.logo object {
   width: auto;
   height: 15vw;
   /* display: none; */
@@ -1053,12 +1053,12 @@ a.sub-navigation-link:hover {
     height: 15vw;
     max-height: 16vh;
   }
-  #svgAnimated {
+  .logo object {
     height: 23vw; /*changed*/
     max-height: 19.5vh; /*changed*/
     /* display: block; */
   }
-  #svgStatic {
+  .logo img {
     display: none;
   }
   .menu-icon {
