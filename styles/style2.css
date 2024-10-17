@@ -417,6 +417,34 @@ a:active {
   outline-offset: 5px;
 }
 
+/*logo colors*/
+:root {
+  --teeth: #fff;
+  --outline: #2167db;
+  --skin: #feda29;
+}
+.yellow {
+  fill: var(--skin);
+}
+.yellow,
+.cls-2,
+.blue,
+.white {
+  stroke-width: 0px;
+}
+.cls-2 {
+  fill: #000;
+}
+.blue {
+  fill: var(--outline);
+}
+.white {
+  fill: var(--teeth);
+}
+.cls-5 {
+  display: none;
+}
+
 /*nav menu*/
 .nav {
   position: sticky;
