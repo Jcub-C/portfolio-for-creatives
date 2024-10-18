@@ -473,19 +473,20 @@ a:active {
   justify-content: flex-start;
   height: 17vw;
   pointer-events: all;
+  align-items: center;
 }
 .home_logo {
   width: auto;
   height: auto;
 }
-.logo img {
+#svgStatic {
   width: auto;
   height: 13vw;
 }
-.logo object {
+#svgAnimated {
   width: auto;
   height: 15vw;
-  /* display: none; */
+  display: none;
 }
 .menu {
   list-style: none;
@@ -1080,12 +1081,12 @@ a.sub-navigation-link:hover {
     height: 15vw;
     max-height: 16vh;
   }
-  .logo object {
+  #svgAnimated {
     height: 23vw; /*changed*/
     max-height: 19.5vh; /*changed*/
-    /* display: block; */
+    display: block;
   }
-  .logo img {
+  #svgStatic {
     display: none;
   }
   .menu-icon {
