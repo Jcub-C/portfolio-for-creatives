@@ -471,7 +471,6 @@ a:active {
 .logo-span {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
   height: 17vw;
   pointer-events: all;
 }
