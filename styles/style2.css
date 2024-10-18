@@ -24,7 +24,7 @@ Imported stylesheets. Remove the ones you do not want to use.
 ██ ██      ██ ██       ██████  ██   ██    ██         ██████ ███████ ███████ 
 
 */
-  @import url("make-something-fly.css");
+@import url("make-something-fly.css");
 @import url("animated-gradient.css");
 @import url("text-stroke.css");
 @import url("stroke-shadow.css");
@@ -477,7 +477,7 @@ a:active {
 }
 .home_logo {
   width: auto;
-  height: auto;z
+  height: auto;
 }
 .logo img {
   width: auto;
