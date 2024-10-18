@@ -480,6 +480,7 @@ a:active {
   height: auto;
   pointer-events: none;
 }
+/*I want to merge this too*/
 #svgStatic {
   width: auto;
   height: 13vw;
