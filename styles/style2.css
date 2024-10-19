@@ -24,7 +24,7 @@ Imported stylesheets. Remove the ones you do not want to use.
 ██ ██      ██ ██       ██████  ██   ██    ██         ██████ ███████ ███████ 
 
 */
-@import url("make-something-fly.css");
+  @import url("make-something-fly.css");
 @import url("animated-gradient.css");
 @import url("text-stroke.css");
 @import url("stroke-shadow.css");
@@ -69,61 +69,45 @@ html {
 /* Design variables refer to CSS variables that store specific design elements, such as colors and typography, which can be utilized throughout a website. Instead of individually modifying each CSS element, designers can quickly make changes by using design variables. Adjust the variables below, create new variables as desired, and delete the variables that you do not want to use. */
 
 :root {
+  /*brand typefaces*/
   --body-typeface: "Poppins", sans-serif;
   --heading-typeface: "Silkscreen", sans-serif;
   --project-title-typeface: "Eczar", serif;
-  /*primary colors*/
-  --bg-color: white;
-  --primary-color: #2167db;
-  --secondary-color: #feda29;
-  --dark-color: black;
-  --transparent: rgba(0, 0, 0, 0);
-
   /*brand colors*/
   --blue1: #2167db; /*blue for white*/
   --blue2: #3f7adc; /*blue for black*/
+  --blue3: #133b7e; /*better blue for white*/
   --yellow1: #feda29; /*brand yellow*/
-  --light: white;
-  --dark: black;
+  --yellow2: #c59209; /*darker yellow still not contrasty enough on white for text*/
+  --light: #fff;
+  --dark: #000;
+  --light-grey: #f3f3f3;
+  --dark-grey: #0f1317;
+  --transparent: rgba(0, 0, 0, 0);
 
-  --background-color: #f3f3f3;
-  --background-color-about: #f3f3f3;
-  --background-color-footer: #ffffff;
-  --alt-background-color: #ffffff;
-  --background-color-holding-page: #feda29;
-  --h1-color: #000000;
-  --h2-color: #000000;
-  --h3-color: #000000;
-  --h4-color: #000000;
-  --h5-color: #000000;
-  --h6-color: #000000;
-  --primary-text-color: rgb(0, 0, 0);
-  --holding-page-title-color: #ffffff;
+  /*active colors colors*/
+  --bg-color: var(--light);
+  --bg-color2: var(--light-grey);
+  --primary-color: var(--blue1);
+  --secondary-color: var(--yellow1);
+  --text-color: var(--dark);
+  --link-color: var(--blue3);
+  --hover-color: var(--yellow2);
+  --heading-color: var(--blue1);
+
+  /*logo colors*/
+  --teeth: var(--light);
+  --outline: var(--blue1);
+  --skin: var(--yellow1);
+
   --accent-color: #feda29;
-  --overlay-color: #feda29;
-  --overlay-title-color: #ffffff;
-  --overlay-description-color: #ffffff;
-  --hyperlink-color: #d1a410;
-  --hyperlink-alternate-color: #d1a410;
-  --hover-color: #000000;
   --visited-color: #d1a410;
-  --project-title-color: #000000;
-  --project-sidebar-background-color: #ffffff;
-  --project-maincontent-background-color: #3a3a3a;
-  --project-sidebar-text-color: rgb(0, 0, 0);
-  --heart-color: darkred;
-  --holding-page-footer-color: #f8f8ff;
-  --text-selection-background-color: #feda29;
-  --linear-gradient-color-1: #ffffff;
-  --linear-gradient-color-2: #ffffff;
-  --linear-gradient-color-3: #feda29;
-  --stroke-shadow-color: rgba(0, 0, 0, 0.4);
 }
 
 body {
   font-family: var(--body-typeface);
-  color: var(--primary-text-color);
-  background: var(--background-color);
+  color: var(--text-color);
+  background: var(--bg-color2);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -132,7 +116,7 @@ body {
 /* The ::selection CSS pseudo-element applies styles to the part of a document that has been highlighted by the user (such as clicking and dragging the mouse across text). */
 
 ::selection {
-  background: var(--accent-color);
+  background: var(--secondary-color);
 }
 
 /* Make all images responsive */
@@ -160,45 +144,46 @@ h1 {
   font-family: var(--heading-typeface);
   font-weight: 900;
   margin-bottom: 1rem;
-  color: var(--h1-color);
+  color: var(--primary-color);
 }
 
 h2 {
   font-size: 2.25rem;
   font-family: var(--heading-typeface);
   margin-bottom: 1rem;
-  color: var(--h2-color);
+  color: var(--primary-color);
 }
 
 h3 {
   font-size: 1.325rem;
   margin-bottom: 1rem;
   line-height: 1.3;
-  color: var(--h3-color);
+  color: var(--primary-color);
 }
 
 h4 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: var(--h4-color);
+  color: var(--primary-color);
 }
 
 h5 {
   font-size: 1.1rem;
   margin-bottom: 1rem;
-  color: var(--h5-color);
+  color: var(--primary-color);
 }
 
 h6 {
   font-size: 1rem;
   margin-bottom: 1rem;
-  color: var(--h6-color);
+  color: var(--primary-color);
 }
 
 p {
   font-size: 1rem;
   line-height: 1.3;
   margin-bottom: 1rem;
+  color: var(--text-color);
 }
 
 em {
@@ -209,73 +194,43 @@ em {
   font-size: 0.875rem;
 }
 
-.hero-headline {
-  color: var(--overlay-color);
-}
-
 .project-title {
   font-size: 3.725rem;
   font-family: var(--project-title-typeface);
-  color: var(--project-title-color);
+  color: black;
   margin-bottom: 1rem;
 }
 
 .overlay-title {
   font-size: 2.875rem;
-  color: var(--overlay-title-color);
+  color: white;
 }
 
 .overlay-description {
-  color: var(--overlay-description-color);
+  color: white;
 }
 
 /* Hyperlink Styles */
 
 a:link {
-  color: var(--hyperlink-color);
+  color: var(--link-color);
   text-decoration: none;
 }
-
 a:visited {
-  color: var(--visited-color);
+  color: var(--link-color);
+  text-decoration: none;
 }
-
 a:hover {
   color: var(--hover-color);
 }
 
 a:focus {
-  outline: 1px solid var(--accent-color);
+  outline: 1px solid var(--yellow1);
 }
 
 a:active {
   color: var(--hover-color);
   /* Tap on mobile */
-}
-
-.navigation-arrow {
-  color: var(--alt-background-color);
-}
-
-.navigation-arrow:link {
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: var(--accent-color);
-  color: transparent;
-}
-
-.navigation-arrow:active,
-.navigation-arrow:hover {
-  color: var(--accent-color);
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: var(--accent-color);
-}
-
-.colored-link {
-  color: var(--hyperlink-alternate-color);
-}
-
-.heart {
-  color: var(--heart-color);
 }
 
 .footer-nav-item {
@@ -327,7 +282,6 @@ a:active {
 
 .menu-icon {
   --s: 5vw; /* size */
-  --dark: black; /* color */
   --bg: #0000; /*background color*/
 
   height: var(--s);
@@ -338,14 +292,14 @@ a:active {
   border-inline: calc(var(--s) / 2) solid var(--bg); /*white mask that the bars fade into*/
   box-sizing: content-box;
   --_g1: linear-gradient(
-      var(--dark) 20%,
+      var(--text-color) 20%,
       var(--transparent) 0 80%,
-      var(--dark) 0
+      var(--text-color) 0
     )
     no-repeat content-box border-box; /*the 20% is top bar color 80% is bottom bar*/
   --_g2: radial-gradient(
       circle closest-side at 50% 12.5%,
-      var(--dark) 95%,
+      var(--text-color) 95%,
       var(--transparent)
     )
     repeat-y content-box border-box; /*the rounded bits of the burger on top and bottom*/
@@ -367,7 +321,7 @@ a:active {
   cursor: pointer;
   mask: linear-gradient(
     90deg,
-    var(--transpa) 20%,
+    var(--transparent) 20%,
     #000 25% 75%,
     var(--transparent) 80%
   ); /* Standard */
@@ -383,7 +337,7 @@ a:active {
   position: absolute; /*These pseudo-elements are positioned relative to the .menu element (since the parent has position: relative*/
   border-radius: var(--s); /*rounds the corners*/
   inset: 40% 0; /*inset: 40% 0; places the pseudo-element 40% from the top and bottom of the parent element, leaving 0 space on the left and right. This ensures that the pseudo-element is vertically centered within the .menu and occupies full width.*/
-  background: var(--dark); /*sets color of bar*/
+  background: var(--text-color); /*sets color of bar*/
   transition: transform 0.3s calc(0.3s - var(--_s, 0.3s));
 } /* This section sets up the middle bar for the hamburger*/
 
@@ -413,16 +367,11 @@ a:active {
   -webkit-mask: none;
   mask: none;
   border: none;
-  outline: 2px solid var(--dark);
+  outline: 2px solid var(--text-color);
   outline-offset: 5px;
 }
 
-/*logo colors*/
-:root {
-  --teeth: #fff;
-  --outline: #2167db;
-  --skin: #feda29;
-}
+/*logo colors and color change stuff*/
 .yellow {
   fill: var(--skin);
 }
@@ -433,10 +382,13 @@ a:active {
   stroke-width: 0px;
 }
 .cls-2 {
-  fill: #000;
+  fill: var(--text-color);
 }
 .blue {
   fill: var(--outline);
+}
+.name {
+  fill: var(--primary-color);
 }
 .white {
   fill: var(--teeth);
@@ -444,7 +396,14 @@ a:active {
 .cls-5 {
   display: none;
 }
-
+.blue,
+yellow,
+.white {
+  transition: fill 0.5s ease;
+}
+* {
+  transition: color 0.5s ease;
+}
 /*nav menu*/
 .nav {
   position: sticky;
@@ -499,9 +458,8 @@ a:active {
   margin-left: 35vw;
   width: 65vw;
   height: 50vh;
-  display: flex; /*changed*/
-  /*background: linear-gradient(90deg,#0000 0 40%,green 0);*/
-  background: black;
+  display: flex;
+  background: var(--text-color);
   transition: all 0.4s ease-out 0s;
 }
 
@@ -531,7 +489,7 @@ a:active {
   font-size: calc(2rem + 2.5vw);
   display: flex;
   padding: 5vh;
-  color: white;
+  color: var(--bg-color);
   text-decoration: none;
 }
 /* Hover Styles*/
@@ -583,7 +541,18 @@ a:active {
 }
 .intro-headline-wrapper {
 }
+/*Titles
 
+████████ ██ ████████ ██      ███████ ███████ 
+   ██    ██    ██    ██      ██      ██      
+   ██    ██    ██    ██      █████   ███████ 
+   ██    ██    ██    ██      ██           ██ 
+   ██    ██    ██    ███████ ███████ ███████
+
+*/
+.project-titles {
+  display: none;
+}
 /* Work Page Layout
 
 ██████  ██████   ██████       ██ ███████  ██████ ████████ ███████ 
@@ -636,7 +605,7 @@ a:active {
   align-items: center;
   flex-direction: column;
   padding: 1em;
-  background-color: var(--overlay-color);
+  background-color: pink;
   transition: opacity 0.3s, visibility 0.3s;
 }
 
@@ -659,7 +628,7 @@ a:active {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 3rem;
-  background: var(--background-color-about);
+  background: var(--bg-color2);
   padding: 1rem;
   flex: 1;
 }
@@ -699,7 +668,7 @@ a:active {
   grid-template-columns: 1fr;
   grid-gap: 3rem;
   min-height: 50vh;
-  background: var(--background-color-footer);
+  background: var(--bg-color2);
   padding: 1rem;
 }
 
@@ -752,8 +721,8 @@ a:active {
   display: flex;
   flex-direction: column;
   align-self: center;
-  color: var(--project-sidebar-text-color);
-  background: var(--project-sidebar-background-color);
+  color: black;
+  background: white;
 }
 
 .project-navigation {
@@ -805,13 +774,6 @@ a:active {
   flex-direction: column;
   align-self: center;
   background-image: black;
-  /* Delete the following if you do not want a gradient background on the project page */
-  /* linear-gradient(
-    -225deg,
-    var(--linear-gradient-color-1) 0%,
-    var(--linear-gradient-color-2) 90%,
-    var(--linear-gradient-color-3) 100%
-  ); */
 }
 
 /* 
@@ -852,12 +814,12 @@ a:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--background-color);
+  background-color: var(--bg-color);
 }
 
 .holding-page-title {
   font-size: 1.5rem;
-  color: var(--holding-page-title-color);
+  color: var(--text-color);
 }
 
 .holding-page-footer {
@@ -873,7 +835,7 @@ a:active {
 
 .holding-page-copyright {
   font-size: 0.8rem;
-  color: var(--holding-page-footer-color);
+  color: var(--bg-color);
   margin-bottom: 0;
 }
 
@@ -1090,11 +1052,11 @@ a.sub-navigation-link:hover {
     display: none;
   }
   .menu-icon {
-    --s: 3vw;
+    --s: calc(5px + 2vw);
   }
   .menu-icon.open:before,
   .menu-icon.open:after {
-    background-color: var(--light);
+    background-color: var(--bg-color);
   }
   .menu li a {
     font-size: calc(1rem + 2.5vw);
@@ -1115,7 +1077,9 @@ a.sub-navigation-link:hover {
     █  █  █ █    █ ████  ███   
      ██ ██   ████  █   █ █  █ 
   */
-
+  .project-titles {
+    display: block;
+  }
   .holding-page-title {
     font-size: 2rem;
   }
