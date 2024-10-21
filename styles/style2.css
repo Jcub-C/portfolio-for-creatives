@@ -525,7 +525,16 @@ yellow,
 ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝                                            
 
 */
-
+.project-info {
+  display:flex;
+  flex-direction: column;
+}
+.home-page-wrapper{
+  display:flex;
+  flex-direction: column;
+  margin:0;
+  padding:0vw 4vw;
+}
 /*Intro
 
 ██ ███    ██ ████████ ██████   ██████  
@@ -563,10 +572,6 @@ yellow,
 
 */
 
-.page-wrapper {
-  flex: 1;
-  margin: 0 10vw;
-}
 
 /* Padding around work grid and project page */
 .portfolio,
@@ -664,7 +669,8 @@ yellow,
 */
 
 .global-footer {
-  display: grid;
+  display:none;
+  /* display: grid; */
   grid-template-columns: 1fr;
   grid-gap: 3rem;
   min-height: 50vh;
@@ -1033,19 +1039,19 @@ a.sub-navigation-link:hover {
     */
 
   .navwrapper {
-    flex-direction: row; /*changed*/
+    flex-direction: row;
   }
   .navbar {
-    height: 25vw; /*changed*/
-    max-height: 21vh; /*changed*/
+    height: 25vw;
+    max-height: 21vh;
   }
   .logo-span {
     height: 15vw;
     max-height: 16vh;
   }
   #svgAnimated {
-    height: 23vw; /*changed*/
-    max-height: 19.5vh; /*changed*/
+    height: 23vw;
+    max-height: 19.5vh;
     display: block;
   }
   #svgStatic {
@@ -1077,6 +1083,22 @@ a.sub-navigation-link:hover {
     █  █  █ █    █ ████  ███   
      ██ ██   ████  █   █ █  █ 
   */
+  .work-page {
+    height: 100vh;
+    max-height: 100vh;
+  }
+  .home-page-wrapper{
+    flex-direction: row;
+    padding:0;
+    height: auto;
+    max-height: 79vh;
+  }
+  .project-info{
+    width: 30vw;
+  }
+  .intro {
+    margin: 0;
+  }
   .project-titles {
     display: block;
   }
