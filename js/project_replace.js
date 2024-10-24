@@ -1,6 +1,6 @@
 const PROJECT1 = "./projects/project1.html";
-const PROJECT2 = "./projects/project1.html";
-const PROJECT3 = "./projects/project1.html";
+const PROJECT2 = "./projects/project2.html";
+const PROJECT3 = "./projects/project3.html";
 
 document.addEventListener("DOMContentLoaded", function () {
   loadProjectSection("project1", PROJECT1, "#keyInfo");

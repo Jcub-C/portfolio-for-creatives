@@ -29,6 +29,24 @@ function runOnMobile() {
 // Function to run on desktop
 function runOnDesktop() {
     console.log("Desktop-specific code is running");
-    //document.body.style.backgroundColor = "#f26abc";
+    
+    $(document).ready(function(){
+        $('#navigation-item-1').hover(function(){
+          $('.overlay2').fadeOut(500);
+          $('.overlay3').fadeOut(500);
+              $('.overlay1').fadeIn(500);
+          },function(){
+      });
+        $('#navigation-item-2').hover(function(){
+          $('.overlay1').fadeOut(500);
+          $('.overlay3').fadeOut(500);
+              $('.overlay2').fadeIn(500);
+      });
+        $('#navigation-item-3').hover(function(){
+          $('.overlay1').fadeOut(500);
+          $('.overlay2').fadeOut(500);
+              $('.overlay3').fadeIn(500);
+      });  
+    });
   
 }
