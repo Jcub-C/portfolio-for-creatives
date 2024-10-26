@@ -47,7 +47,6 @@ No media query for `xs` since this is the default in Bootstrap
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
-  cursor: url("../assets/temp/up-cursor.png"), auto !important;
 }
 
 *,
@@ -494,6 +493,8 @@ yellow,
   padding: 5vh;
   color: var(--bg-color);
   text-decoration: none;
+  margin-right: 6vw;
+  padding-right: 0;
 }
 /* Hover Styles*/
 .menu li a:hover {
@@ -517,7 +518,12 @@ yellow,
 .menu.visuallyhidden li a {
   opacity: 0;
 }
-
+#colorChange,
+#colorChangeBack {
+  width: 5vw;
+  height: 5vw;
+  cursor: pointer;
+}
 /* Home 
 
 ██╗  ██╗ ██████╗ ███╗   ███╗███████╗
@@ -1094,6 +1100,8 @@ a.sub-navigation-link:hover {
   }
   .menu li a {
     font-size: calc(1rem + 2.5vw);
+    margin-right: 6vw;
+    padding-right: 0;
   }
   .menu {
     margin-left: 60vw;
@@ -1165,16 +1173,13 @@ a.sub-navigation-link:hover {
   #project-title-2:hover,
   #project-title-3:hover {
     transform: translate(-5px, -5px);
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
   }
   .item h2 {
     transition: color 0.15 ease;
     width: 25vw;
     height: 4.5vh;
     font-size: calc(1rem + 2vh);
-  }
-  .item h2:hover {
-    color: var(--bg-color2);
   }
   /* Work
       █     █  ████  ████  █  █ 
@@ -1191,6 +1196,7 @@ a.sub-navigation-link:hover {
     width: 70vw;
     display: flex;
     justify-content: center;
+    pointer-events: none;
   }
   .portfolio {
     padding: 0;
@@ -1199,18 +1205,42 @@ a.sub-navigation-link:hover {
   .project-1-image,
   .project-2-image,
   .project-3-image {
+    display: none;
+  }
+  .keyInfo {
+    display: none;
+  }
+  .portfolioPiece2,
+  .portfolioPiece1,
+  .portfolioPiece3 {
     position: absolute;
+    top: 0vw;
+    bottom: 0vw;
     display: flex;
-    left: -15vw;
-    right: 0;
-    top: 0;
-    bottom: 0;
     opacity: 1;
     z-index: -1;
-    width: 100vw;
+    width: 70vw;
   }
-  .project-2-image,
-  .project-3-image {
+  .portfolioPiece1 {
+    background-image: url(/assets/prep-photos/jacob-chong_3030_prep_image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .portfolioPiece2 {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/316293/computer.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+    z-index: -2;
+  }
+  .portfolioPiece3 {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/316293/computer.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
     z-index: -2;
   }
   .project-title {

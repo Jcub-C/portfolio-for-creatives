@@ -1,3 +1,15 @@
+let color = 0;
+
+function changeColor() {
+  if (color === 0) {
+    changeLogoColor();
+    color = 1;
+  } else {
+    changeLogoColorBack();
+    color = 0;
+  }
+}
+
 function changeLogoColor() {
   //add transition to backgroun-color
   const style = document.createElement("style");
