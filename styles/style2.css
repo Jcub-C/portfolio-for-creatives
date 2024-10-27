@@ -101,6 +101,11 @@ html {
 
   --accent-color: #feda29;
   --visited-color: #d1a410;
+
+  /*project stuff*/
+  --project-image-1:url(/assets/prep-photos/jacob-chong_3030_prep_image.jpg);
+  --project-image-2:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/316293/computer.jpg);
+  --project-image-3:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/316293/phone.jpg);
 }
 
 body {
@@ -190,13 +195,6 @@ em {
 
 .fineprint {
   font-size: 0.875rem;
-}
-
-.project-title {
-  font-size: 3.725rem;
-  font-family: var(--project-title-typeface);
-  color: black;
-  margin-bottom: 1rem;
 }
 
 .overlay-title {
@@ -454,11 +452,11 @@ yellow,
   flex-direction: column;
   align-items: flex-end;
   position: fixed;
-  padding-bottom: 0vw;
+  padding-top: 5vh;
   margin-top: 17vw;
   margin-left: 35vw;
   width: 65vw;
-  height: 50vh;
+  height: 100vh;
   display: flex;
   background: var(--text-color);
   transition: all 0.4s ease-out 0s;
@@ -497,7 +495,7 @@ yellow,
   padding-right: 0;
 }
 /* Hover Styles*/
-.menu li a:hover {
+#colorChange:hover,.menu li a:hover {
   color: var(--secondary-color);
   transition: all 0.4s;
 }
@@ -518,11 +516,18 @@ yellow,
 .menu.visuallyhidden li a {
   opacity: 0;
 }
-#colorChange,
-#colorChangeBack {
-  width: 5vw;
-  height: 5vw;
+#colorChange{
+  height: 100%;
   cursor: pointer;
+  font-size: calc(2rem + 2.5vw);
+  font-family: var(--heading-typeface);
+  color: var(--bg-color);
+  background: none;
+  border: none;
+  padding:5vh;
+  margin-right: 6vw;
+  padding-right: 0;
+
 }
 /* Home 
 
@@ -553,6 +558,11 @@ yellow,
 ██ ██   ████    ██    ██   ██  ██████  
 
 */
+.project-info {
+  width:100%;
+  display: flex;
+  align-items: center;
+}
 .intro-headline {
   font-family: var(--body-typeface);
   letter-spacing: calc(1px + 0.05vw);
@@ -560,7 +570,8 @@ yellow,
   line-height: calc(15px + 2vw);
 }
 .intro {
-  margin: 4vw 12vw;
+  margin: 4vh 0;
+  width: 70vw;
 }
 .intro-headline-wrapper {
 }
@@ -585,13 +596,66 @@ yellow,
 ██      ██   ██  ██████   █████  ███████  ██████    ██    ███████ 
 
 */
-
+.portfolioPiece1,
+.portfolioPiece2,
+.portfolioPiece3 {
+  position: relative;
+  display: flex;
+  opacity: 1;
+  z-index: -1;
+  width:90vw;
+  overflow: hidden;
+  background-image: none;
+}
+.keyInfo{
+  display: flex;
+  align-items: center;
+}
+.info-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin:2vh 0 4vh 0;
+  width: 80vw;
+}
+.project-title{
+  display:flex;
+  transition: color 0.15 ease;
+  width: 25vw;
+  height: auto;
+  font-size: calc(.6rem + 4vw);
+  font-family: var(--heading-typeface);
+  margin-bottom: .5vh;
+}
+.project-headline{
+  font-size: calc(1rem + 1vw);
+}
+.mobile-project-images{
+  display: flex;
+  opacity: 1;
+  z-index: -1;
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.project-image-1{
+  background-image: var(--project-image-1);
+}
+.keyInfo {
+  display:flex;
+  flex-direction: column;
+  width:100%;
+  overflow: hidden;
+}
 .project-1-image,
 .project-2-image,
 .project-3-image {
   position: relative;
   display: flex;
   opacity: 1;
+  width: 80%;
 }
 .project-1-image {
   filter: hue-rotate(90deg);
@@ -602,16 +666,13 @@ yellow,
 .project-3-image {
   filter: hue-rotate(10deg);
 }
-.project-title {
-  display: flex;
-}
 .project-headline {
   display: flex;
 }
 /* Padding around work grid and project page */
 .portfolio,
 .project-wrapper {
-  padding: 0.25rem;
+  padding: 0;
 }
 
 /* Defining the work page grid */
@@ -1098,7 +1159,7 @@ a.sub-navigation-link:hover {
   .menu-icon.open:after {
     background-color: var(--bg-color);
   }
-  .menu li a {
+  .menu li a,#colorChange {
     font-size: calc(1rem + 2.5vw);
     margin-right: 6vw;
     padding-right: 0;
@@ -1179,13 +1240,22 @@ a.sub-navigation-link:hover {
     transition: color 0.15 ease;
     width: 25vw;
     height: 4.5vh;
-    font-size: calc(1rem + 2vh);
+    font-size: calc(.6rem + 2.1vh);
+  }
+  .info-wrapper{
+    margin:0;
   }
   /* Work
       █     █  ████  ████  █  █ 
       █  █  █ █    █ ████  ███   
        ██ ██   ████  █   █ █  █ 
   */
+  .info-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin:2vh 0 4vh 0;
+}
   .portfolio-wrapper {
     overflow: hidden;
     position: absolute;
@@ -1193,7 +1263,7 @@ a.sub-navigation-link:hover {
     left: 30vw;
     right: 0;
     bottom: 0;
-    width: 70vw;
+    width: 80vw;
     display: flex;
     justify-content: center;
     pointer-events: none;
@@ -1210,8 +1280,8 @@ a.sub-navigation-link:hover {
   .keyInfo {
     display: none;
   }
-  .portfolioPiece2,
   .portfolioPiece1,
+  .portfolioPiece2,
   .portfolioPiece3 {
     position: absolute;
     top: 0vw;
@@ -1220,26 +1290,20 @@ a.sub-navigation-link:hover {
     opacity: 1;
     z-index: -1;
     width: 70vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
   .portfolioPiece1 {
-    background-image: url(/assets/prep-photos/jacob-chong_3030_prep_image.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-image: var(--project-image-1);
   }
   .portfolioPiece2 {
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/316293/computer.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-image: var(--project-image-2);
     display: none;
     z-index: -2;
   }
   .portfolioPiece3 {
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/316293/computer.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-image: var(--project-image-3);
     display: none;
     z-index: -2;
   }

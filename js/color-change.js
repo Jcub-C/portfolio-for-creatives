@@ -4,9 +4,12 @@ function changeColor() {
   if (color === 0) {
     changeLogoColor();
     color = 1;
+    document.getElementById("colorChange").innerHTML="Light Mode";
   } else {
     changeLogoColorBack();
     color = 0;
+    document.getElementById("colorChange").innerHTML="Dark Mode";
+
   }
 }
 
