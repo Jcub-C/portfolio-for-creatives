@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Timer</title>
+    <link rel="stylesheet" href="boarding.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Timer</h1>
+      <div id="timerDisplay">10:00</div>
+      <div class="buttons">
+        <button onclick="startTimer()">Start</button>
+        <button onclick="stopTimer()">Stop</button>
+        <button onclick="resetTimer()">Reset</button>
+      </div>
+      <div class="adjust-buttons">
+        <button onclick="adjustTimer(10)">+10s</button>
+        <button onclick="adjustTimer(20)">+20s</button>
+        <button onclick="adjustTimer(30)">+30s</button>
+        <button onclick="adjustTimer(-10)">-10s</button>
+        <button onclick="adjustTimer(-20)">-20s</button>
+        <button onclick="adjustTimer(-30)">-30s</button>
+      </div>
+    </div>
+    <script src="boarding.js"></script>
+  </body>
+</html>
