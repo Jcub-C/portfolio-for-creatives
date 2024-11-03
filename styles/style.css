@@ -674,8 +674,9 @@ yellow,
 }
 .portrait {
   width: 25vw;
-  height: 25vw;
+  height: auto;
   background-color: red;
+  aspect-ratio: 1 / 1;
   margin-bottom: 5vh;
   border-radius: 8px;
   object-fit: cover;
@@ -1311,10 +1312,9 @@ a.sub-navigation-link:hover {
     height: 130vh;
   }
   .portrait {
-    width: auto;
-    aspect-ratio: 1;
-    height: 33vh;
-    max-height: 30%;
+    width: 50vh;
+    max-width: 90%;
+    height: auto;
     margin-top: 16vh;
   }
   .about-me {

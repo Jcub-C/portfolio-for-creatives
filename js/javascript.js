@@ -53,7 +53,7 @@ for (var i = 0; i < hobbyList.length; i++) {
       "<span class='subhead'>" +
       hobbyList[i].subject +
       "</span> " +
-      "<span class='gap'>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      "<span class='gap'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</span>"
   );
 }
 
