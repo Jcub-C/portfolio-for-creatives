@@ -21,6 +21,21 @@
       src="https://kit.fontawesome.com/8db9ce5559.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      // Check saved color mode in local storage and set appropriate CSS
+      (function() {
+        const colorMode = localStorage.getItem("colorMode");
+        if (colorMode === "1") {
+          document.documentElement.style.setProperty("--outline", "var(--blue1)");
+          document.documentElement.style.setProperty("--bg-color", "var(--dark)");
+          document.documentElement.style.setProperty("--bg-color2", "var(--dark-grey)");
+          document.documentElement.style.setProperty("--text-color", "var(--light-grey)");
+          document.documentElement.style.setProperty("--primary-color", "var(--yellow1)");
+          document.documentElement.style.setProperty("--secondary-color", "var(--blue2)");
+          document.documentElement.style.setProperty("--link-color", "var(--yellow2)");
+        }
+      })();
+    </script>
 
     <!--link to javascript-->
     <script src="./js/jquery-3.7.1.min.js" defer></script>
@@ -1044,7 +1059,7 @@
     ██║  ██║██████╔╝╚██████╔╝╚██████╔╝   ██║   
     ╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚═════╝    ╚═╝   
      -->
-    <div class="about-wrapper">
+    <main class="about-wrapper content">
       <header class="about-me">
         <img
           src="assets/about-images/jacob-chong--ui-ux--about--photo.jpeg"
@@ -1088,9 +1103,9 @@
         </p>
       </section>
       <section class="about-fun"></section>
-    </div>
+    </main>
 
-    <footer class="about-footer" id="ticker">
+    <footer class="about-footer content" id="ticker">
       <p></p>
       <!-- <div class="ticker">
         <div class="ticker-item">Currently Watching: House MD.</div>

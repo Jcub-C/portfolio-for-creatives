@@ -28,10 +28,10 @@ function loadColorMode() {
 }
 
 // Call loadColorMode when the page loads
-window.addEventListener("DOMContentLoaded", loadColorMode);
+window.addEventListener("DOMContentLoaded", () => {
+  loadColorMode();
 
-function changeLogoColor() {
-  // Add transition to background-color
+  // After initial load, add smooth transitions to color changes
   const style = document.createElement("style");
   style.innerHTML = `
       * {
@@ -39,7 +39,9 @@ function changeLogoColor() {
       }
   `;
   document.head.appendChild(style);
+});
 
+function changeLogoColor() {
   // Function to change CSS variables for dark mode
   document.documentElement.style.setProperty("--outline", "var(--blue1)");
   document.documentElement.style.setProperty("--bg-color", "var(--dark)");
