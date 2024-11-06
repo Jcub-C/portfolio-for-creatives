@@ -71,6 +71,7 @@ html {
   /*brand typefaces*/
   --body-typeface: "Poppins", sans-serif;
   --heading-typeface: "Silkscreen", sans-serif;
+  --heading2-typeface: "Pixelfy+Sans", sans-serif;
   --project-title-typeface: "Eczar", serif;
   /*brand colors*/
   --blue1: #2167db; /*blue for white*/
@@ -250,11 +251,13 @@ a:active {
   line-height: calc(15px + 2.4vw);
 }
 .project-title {
-  width: 25vw;
+  width: 80vw;
   height: auto;
-  font-size: calc(0.6rem + 4vw);
+  font-size: calc(0.5rem + 3.5vw);
   font-family: var(--heading-typeface);
+  font-weight: 400;
   margin-bottom: 0.5vh;
+  letter-spacing: normal;
 }
 .project-description {
   font-size: 1.225rem;
@@ -598,7 +601,7 @@ yellow,
 .project-titles {
   display: none;
 }
-/* Work Page Layout
+/* Work Page Project Display
 
 ██████  ██████   ██████       ██ ███████  ██████ ████████ ███████ 
 ██   ██ ██   ██ ██    ██      ██ ██      ██         ██    ██      
@@ -790,13 +793,14 @@ yellow,
   margin-bottom: 2rem;
 }
 
-/* Project Page 
+/* Project Pages 
 
-██████  ██████   ██████       ██ ███████  ██████ ████████     ██████   █████   ██████  ███████ 
-██   ██ ██   ██ ██    ██      ██ ██      ██         ██        ██   ██ ██   ██ ██    ██      
-██████  ██████  ██    ██      ██ █████   ██         ██        ██████  ███████ ██   ███ █████   
-██      ██   ██ ██    ██ ██   ██ ██      ██         ██        ██      ██   ██ ██    ██ ██      
-██      ██   ██  ██████   █████  ███████  ██████    ██        ██      ██   ██  ██████  ███████ 
+██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗███████╗
+██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝██╔════╝╚══██╔══╝██╔════╝
+██████╔╝██████╔╝██║   ██║     ██║█████╗  ██║        ██║   ███████╗
+██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝  ██║        ██║   ╚════██║
+██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   ███████║
+╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   ╚══════╝
                                                                                                
 */
 .project-logos {
@@ -825,6 +829,7 @@ yellow,
   flex: 1;
   align-items: flex-end;
   justify-content: space-between;
+  gap:1vh;
 }
 
 .arrow {
@@ -868,67 +873,6 @@ yellow,
   flex-direction: column;
   align-self: center;
   background-image: black;
-}
-
-/* 
-
-██   ██  ██████  ██      ██████  ██ ███    ██  ██████  
-██   ██ ██    ██ ██      ██   ██ ██ ████   ██ ██       
-███████ ██    ██ ██      ██   ██ ██ ██ ██  ██ ██   ███ 
-██   ██ ██    ██ ██      ██   ██ ██ ██  ██ ██ ██    ██ 
-██   ██  ██████  ███████ ██████  ██ ██   ████  ██████  
-                                                       
-*/
-.holding-page-svg {
-  width: 70%;
-  position: relative;
-}
-.holding-page-link {
-  width: 100%;
-}
-.holding-page-span {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-.holding-page-wrapper {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 80% 20%;
-  width: 100%;
-  min-height: 100vh;
-  background: var(--bg-color);
-}
-
-.holding-page-animation {
-  grid-row-start: 1;
-  margin-bottom: 0rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--bg-color);
-}
-
-.holding-page-title {
-  font-size: 1.5rem;
-  color: var(--text-color);
-}
-
-.holding-page-footer {
-  grid-row-start: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-
-  background-color: black;
-}
-
-.holding-page-copyright {
-  font-size: 0.8rem;
-  color: var(--bg-color);
-  margin-bottom: 0;
 }
 
 /*
@@ -1135,7 +1079,7 @@ a.sub-navigation-link:hover {
   }
   .project-title {
     width: 25vw;
-    height: 4.5vh;
+    height: auto;
     font-size: calc(0.6rem + 2.1vh);
     margin-bottom: 0;
   }
@@ -1237,7 +1181,7 @@ a.sub-navigation-link:hover {
     -ms-transition: background-color 0.2s ease, transform 0.2s ease;
     display: flex;
     width: 23vw;
-    height: calc(28px + 1vh);
+    height: auto;
     align-items: flex-start;
     margin-top: 0.5vh;
   }
