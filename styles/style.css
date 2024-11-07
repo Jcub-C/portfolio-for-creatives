@@ -116,10 +116,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-.desktop-hidden {
-  display: flex;
-}
-
 /* The ::selection CSS pseudo-element applies styles to the part of a document that has been highlighted by the user (such as clicking and dragging the mouse across text). */
 
 ::selection {
@@ -134,6 +130,18 @@ svg {
   /* Removes the gap/space in inline elements for text descenders. */
   object-fit: contain;
   /* This is optional. Also try cover or leave out entirely. */
+}
+.mobile-hidden {
+  display: none;
+}
+.desktop-hidden {
+  display: flex;
+}
+.visible {
+  opacity: 1;
+}
+.hidden {
+  opacity:0;
 }
 
 /* Global & Mobile Typography 
@@ -534,11 +542,6 @@ yellow,
 #menu-toggle {
   display: none;
 }
-
-.mobile-hidden {
-  display: none;
-}
-
 .visuallyhidden {
   opacity: 0;
   margin-left: 100vw;
@@ -558,6 +561,8 @@ yellow,
 */
 .work-page {
   max-height: 100vh;
+  position: relative;
+  z-index: -5;
 }
 .project-info {
   display: flex;
@@ -568,6 +573,7 @@ yellow,
   flex-direction: column;
   margin: 0;
   padding: 0vw 4vw;
+  z-index: -4;
 }
 /*Intro
 
@@ -610,6 +616,9 @@ yellow,
 ██      ██   ██  ██████   █████  ███████  ██████    ██    ███████ 
 
 */
+.portfolio-wrapper {
+  z-index: -3;
+}
 .portfolioPiece1,
 .portfolioPiece2,
 .portfolioPiece3 {
@@ -1063,6 +1072,9 @@ a.sub-navigation-link:hover {
   .mobile-hidden {
     display: flex;
   }
+  .desktop-hidden {
+    display: none;
+  }
   /*
   
   █████  ████  ██  ██ █████
@@ -1073,9 +1085,6 @@ a.sub-navigation-link:hover {
   .body-text-1 {
     font-size: calc(15px + 1vh);
     line-height: calc(15px + 2vh);
-  }
-  .desktop-hidden {
-    display: none;
   }
   .project-title {
     width: 25vw;
@@ -1217,11 +1226,11 @@ a.sub-navigation-link:hover {
     width: 70%;
     display: flex;
     justify-content: center;
-    pointer-events: none;
   }
   .portfolio {
     padding: 0;
     margin: 0;
+    display: block;
   }
   .project-1-image,
   .project-2-image,
@@ -1241,6 +1250,7 @@ a.sub-navigation-link:hover {
     opacity: 1;
     z-index: -1;
     width: 70vw;
+    height: auto;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -1258,6 +1268,7 @@ a.sub-navigation-link:hover {
     display: none;
     z-index: -2;
   }
+  
 
   /* About
  ███  ██    █████  ██  ██ ██████ 
@@ -1297,7 +1308,73 @@ a.sub-navigation-link:hover {
     height: 10vh;
   }
 
-  /**/
+  /*
+█   █ ████ ████    █████      ████ ████    █████    ██ ████ ████ ██████
+█████ ███  ████   ██   ██     ████ ████   ██   ██   ██ ███  ██     ██
+█   █ ████ ██  ██  █████      █    ██  ██  █████  ████ ████ ████   ██
+  */
+  .project-hero {
+    height: 80vh;
+    width: 100%;
+    background-color: red;
+    margin-top:-1.2vh;
+    position: relative;
+    z-index: -4;
+  }
+  .project-screen-1,.project-screen-2,.project-screen-3,.project-screen-4,.project-screen-5{
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color:purple;
+    z-index: -3;
+    position: relative;
+    margin-top:20vh;
+  }
+  .project-screen-2{
+    background-color: blue;
+  }
+  .project-screen-3{
+    background-color: green;
+  }
+  .project-screen-4{
+    background-color: yellow;
+  }
+  .project-screen-5{
+    background-color: lightblue;
+  }
+  .project-explanation {
+    width: 35%;
+    height: 80vh;
+    background-color: darkblue;
+    transition: opacity 0.2s ease-in-out; /* Smooth transition */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Start hidden */
+    z-index: -2;
+    position: fixed;
+    left: 0;
+    bottom:0;
+    top:20vh;
+    right:65%;
+  }
+  .project-trigger {
+    width: 35%;
+    height: 80vh;
+    background-color: orange;
+    transition: opacity 0.2s ease-in-out; /* Smooth transition */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Start hidden */
+    z-index: -2;
+    position: relative;
+  }
+  .trigger-selection{
+    background-color: magenta;
+  }
+
 
   /* Project Page Flex Direction on Large Devices */
   .project-wrapper {

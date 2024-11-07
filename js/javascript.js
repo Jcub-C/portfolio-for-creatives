@@ -94,3 +94,49 @@ for (var i = 0; i < hobbyList.length; i++) {
 
 // Duplicate content to create seamless scrolling
 $("#ticker p").append($("#ticker p").html());
+
+//log in console which element I clicked on
+document.addEventListener("click", function(event) {
+  console.log("Clicked element:", event.target);
+});
+
+//projects scroll fade
+window.addEventListener('scroll', function() {
+  const elements = [
+    { target: document.getElementById('target-element1'), trigger: document.getElementById('trigger-selection1') },
+    { target: document.getElementById('target-element2'), trigger: document.getElementById('trigger-selection2') },
+    { target: document.getElementById('target-element3'), trigger: document.getElementById('trigger-selection3') },
+    { target: document.getElementById('target-element4'), trigger: document.getElementById('trigger-selection4') },
+    { target: document.getElementById('target-element5'), trigger: document.getElementById('trigger-selection5') }
+  ];
+
+  // Define the opacity range in viewport height percentages
+  const fadeInStart = window.innerHeight * 0.35;  // 35% of viewport height
+  const fullOpacityStart = window.innerHeight * 0.4;  // 40% of viewport height
+  const fadeOutStart = window.innerHeight * 0.8;  // 80% of viewport height
+  const fadeOutEnd = window.innerHeight * 0.85;  // 85% of viewport height
+
+  elements.forEach(({ target, trigger }) => {
+    const triggerPosition = trigger.getBoundingClientRect().top;
+    let opacity;
+
+    if (triggerPosition >= fadeInStart && triggerPosition <= fullOpacityStart) {
+      // Gradually increase opacity from 0 to 1
+      opacity = (triggerPosition - fadeInStart) / (fullOpacityStart - fadeInStart);
+    } else if (triggerPosition > fullOpacityStart && triggerPosition <= fadeOutStart) {
+      // Set full opacity (1) between 40% and 80% viewport height
+      opacity = 1;
+    } else if (triggerPosition > fadeOutStart && triggerPosition <= fadeOutEnd) {
+      // Gradually decrease opacity from 1 to 0
+      opacity = 1 - (triggerPosition - fadeOutStart) / (fadeOutEnd - fadeOutStart);
+    } else {
+      // Outside defined ranges, set opacity to 0
+      opacity = 0;
+    }
+
+    // Apply the calculated opacity to the target element
+    target.style.opacity = opacity;
+  });
+});
+
+
