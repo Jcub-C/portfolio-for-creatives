@@ -11,6 +11,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:image" content="screenshot.jpg" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/branding-images/jcubcreative-favicon.ico"
+    />
     <!--Change content later-->
     <link
       rel="stylesheet"
@@ -22,29 +27,66 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      // Check saved color mode in local storage and set appropriate CSS
-      (function() {
+      (function () {
         const colorMode = localStorage.getItem("colorMode");
         if (colorMode === "1") {
-          document.documentElement.style.setProperty("--outline", "var(--blue1)");
-          document.documentElement.style.setProperty("--bg-color", "var(--dark)");
-          document.documentElement.style.setProperty("--bg-color2", "var(--dark-grey)");
-          document.documentElement.style.setProperty("--text-color", "var(--light-grey)");
-          document.documentElement.style.setProperty("--primary-color", "var(--yellow1)");
-          document.documentElement.style.setProperty("--secondary-color", "var(--blue2)");
-          document.documentElement.style.setProperty("--link-color", "var(--yellow2)");
+          document.documentElement.style.setProperty(
+            "--bg-color",
+            "var(--dark)"
+          );
+          document.documentElement.style.setProperty(
+            "--bg-color2",
+            "var(--dark-grey)"
+          );
+          document.documentElement.style.setProperty(
+            "--text-color",
+            "var(--light-grey)"
+          );
+          document.documentElement.style.setProperty(
+            "--primary-color",
+            "var(--yellow1)"
+          );
+          document.documentElement.style.setProperty(
+            "--secondary-color",
+            "var(--blue2)"
+          );
+          document.documentElement.style.setProperty(
+            "--link-color",
+            "var(--yellow2)"
+          );
+        } else {
+          document.documentElement.style.setProperty(
+            "--bg-color",
+            "var(--light)"
+          );
+          document.documentElement.style.setProperty(
+            "--bg-color2",
+            "var(--light-grey)"
+          );
+          document.documentElement.style.setProperty(
+            "--text-color",
+            "var(--dark)"
+          );
+          document.documentElement.style.setProperty(
+            "--primary-color",
+            "var(--blue1)"
+          );
+          document.documentElement.style.setProperty(
+            "--secondary-color",
+            "var(--yellow1)"
+          );
         }
       })();
     </script>
+
+    <!--link to css style sheet-->
+    <link rel="stylesheet" href="./styles/style.css" />
 
     <!--link to javascript-->
     <script src="./js/jquery-3.7.1.min.js" defer></script>
     <script src="./js/javascript.js" defer></script>
     <script src="./js/color-change.js" defer></script>
     <script src="./js/size-change.js" defer></script>
-
-    <!--link to css style sheet-->
-    <link rel="stylesheet" href="./styles/style.css" />
   </head>
 
   <body class="about-page">

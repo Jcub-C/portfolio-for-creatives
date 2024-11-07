@@ -105,7 +105,7 @@ html {
 
   /*project stuff*/
   --project-image-1: url(/assets/prep-photos/jacob-chong_3030_prep_image.jpg);
-  --project-image-2: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/316293/computer.jpg);
+  --project-image-2: url(/assets/project-images/susan-rodgers/jacob-chong--ui-ux-webflow--susan-rodgers--hero.JPG);
   --project-image-3: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/316293/phone.jpg);
 }
 
@@ -141,7 +141,17 @@ svg {
   opacity: 1;
 }
 .hidden {
-  opacity:0;
+  opacity: 0;
+}
+
+.menu li button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
 /* Global & Mobile Typography 
@@ -272,7 +282,8 @@ a:active {
   line-height: 1.2;
   margin-bottom: 1rem;
 }
-.nav-item {
+.nav-item,
+#colorChange {
   /*nav link font*/
   font-family: var(--heading-typeface);
   font-size: calc(2rem + 2.5vw);
@@ -280,13 +291,34 @@ a:active {
   padding: 5vh;
   color: var(--bg-color);
   text-decoration: none;
-  margin-right: 6vw;
+  margin-right: 0;
   padding-right: 0;
   background: none;
   border: none;
   transition: all 0.4s;
 }
-.nav-item:hover {
+.menu li {
+  display: flex;
+  flex-direction: row;
+  margin-right: 6vw;
+}
+.menu li button {
+  font-size: 1rem;
+  font-family: var(--heading-typeface);
+  font-size: calc(1rem + 2.5vw);
+  display: flex;
+  padding: 5vh;
+  color: var(--bg-color);
+  text-decoration: none;
+  margin-right: 0vw;
+  padding-right: 0;
+  background: none;
+  border: none;
+  transition: all 0.4s;
+}
+.nav-item:hover,
+.menu li button:hover,
+#colorChange:hover {
   color: var(--secondary-color);
 }
 .subhead {
@@ -310,7 +342,6 @@ a:active {
   opacity: 0;
 }
 
-
 /* Nav
 
 ███    ██  █████  ██    ██ 
@@ -321,7 +352,11 @@ a:active {
 
 */
 
-/*nav burger icon*/
+/*
+
+nav burger icon
+
+*/
 .burger-container {
   background: var(--transparent);
   display: flex;
@@ -402,7 +437,6 @@ a:active {
 .menu-icon:after {
   transform: rotate(0deg);
 }
-
 .menu-icon.open {
   clip-path: inset(0); /*removes any clip-path set earlier when in X form*/
   --_p: calc(-1 * var(--s));
@@ -428,7 +462,11 @@ a:active {
   outline-offset: 5px;
 }
 
-/*logo colors and color change stuff*/
+/*
+
+logo colors and color change stuff
+
+*/
 .yellow {
   fill: var(--skin);
 }
@@ -461,7 +499,11 @@ yellow,
 * {
   transition: color 0.5s ease;
 }
-/*nav menu*/
+/*
+
+brand logo
+
+*/
 .nav {
   position: sticky;
   top: 0px;
@@ -499,6 +541,12 @@ yellow,
 #svgAnimated {
   display: none;
 }
+
+/*
+
+drop down menu
+
+*/
 .menu {
   list-style: none;
   justify-content: flex-start;
@@ -520,7 +568,7 @@ yellow,
   text-align: center;
   opacity: 0; /* Initially hidden */
   transform: translateY(20px); /* Start slightly below their final position */
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+  transition: all 0.4s ease-out 0s; /* Smooth transition */
 }
 .menu li:nth-child(1) {
   transition-delay: 0.3s;
@@ -654,6 +702,12 @@ yellow,
 .project-image-1 {
   background-image: var(--project-image-1);
 }
+.project-image-2 {
+  background-image: var(--project-image-2);
+}
+.project-image-3 {
+  background-image: var(--project-image-3);
+}
 .keyInfo {
   display: flex;
   flex-direction: column;
@@ -726,7 +780,7 @@ yellow,
 .about-fun {
   width: 100%;
   height: calc(36vh - 6dvw);
-  background-color: lightblue;
+  /* background-color: lightblue; */
 }
 .about-footer {
   width: 100%;
@@ -838,7 +892,7 @@ yellow,
   flex: 1;
   align-items: flex-end;
   justify-content: space-between;
-  gap:1vh;
+  gap: 1vh;
 }
 
 .arrow {
@@ -1092,9 +1146,9 @@ a.sub-navigation-link:hover {
     font-size: calc(0.6rem + 2.1vh);
     margin-bottom: 0;
   }
-  .nav-item {
+  .nav-item,
+  #colorChange {
     font-size: calc(1rem + 2.5vw);
-    margin-right: 6vw;
     padding-right: 0;
   }
   .subhead {
@@ -1268,7 +1322,6 @@ a.sub-navigation-link:hover {
     display: none;
     z-index: -2;
   }
-  
 
   /* About
  ███  ██    █████  ██  ██ ██████ 
@@ -1313,17 +1366,17 @@ a.sub-navigation-link:hover {
 █████ ███  ████   ██   ██     ████ ████   ██   ██   ██ ███  ██     ██
 █   █ ████ ██  ██  █████      █    ██  ██  █████  ████ ████ ████   ██
   */
-  .white{
-    color:white;
+  .white {
+    color: white;
   }
   .project-hero {
     height: 80vh;
     width: 100%;
-    background-image:url(../assets/project-images/susan-rodgers/jacob-chong--ui-ux-webflow--susan-rodgers--hero.JPG);
+    background-image: url(../assets/project-images/susan-rodgers/jacob-chong--ui-ux-webflow--susan-rodgers--hero.JPG);
     background-position: right;
     background-repeat: no-repeat;
     background-color: #000;
-    margin-top:-1.2vh;
+    margin-top: -1.2vh;
     position: relative;
     z-index: -4;
     display: flex;
@@ -1333,68 +1386,68 @@ a.sub-navigation-link:hover {
     padding-bottom: 3%;
     padding-right: 30%;
   }
-  .project-page-title{
+  .project-page-title {
     font-size: 5rem;
     font-family: var(--heading-typeface);
     font-weight: 400;
     letter-spacing: normal;
     margin-bottom: 1rem;
   }
-  .project-date{
+  .project-date {
     font-size: 1.5rem;
     font-family: var(--heading-typeface);
     font-weight: 400;
     letter-spacing: normal;
   }
-  .details{
+  .details {
     line-height: 1rem;
   }
-  .project-genre{
+  .project-genre {
     font-size: 1.5rem;
     font-family: var(--heading-typeface);
     font-weight: 400;
     letter-spacing: normal;
   }
-  .collaborators{
+  .collaborators {
     font-size: 1.5rem;
     font-family: var(--heading-typeface);
     font-weight: 400;
     letter-spacing: normal;
   }
-  .project-headline{
+  .project-headline {
     font-size: 2rem;
     font-family: var(--body-typeface);
     font-weight: 400;
-    width:50vw;
+    width: 50vw;
     letter-spacing: normal;
   }
-  .project-screen-1,.project-screen-2,.project-screen-3,.project-screen-4,.project-screen-5{
+  .explanation-text {
+    font-size: 1.5rem;
+    font-family: var(--body-typeface);
+    font-weight: 400;
+    letter-spacing: normal;
+    padding: 0px 3vw 0px 3vw;
+  }
+  .project-screen-1,
+  .project-screen-2,
+  .project-screen-3,
+  .project-screen-4,
+  .project-screen-5 {
     height: 85vh;
     width: 100%;
     display: flex;
     flex-direction: row;
-    background-color:purple;
+    /* background-color: purple; */
     z-index: -3;
     position: relative;
-    margin-top:20vh;
+    margin-top: 20vh;
     padding-right: 0;
   }
-  .project-screen-2{
-    background-color: blue;
-  }
-  .project-screen-3{
-    background-color: green;
-  }
-  .project-screen-4{
-    background-color: yellow;
-  }
-  .project-screen-5{
-    background-color: lightblue;
-  }
+
   .project-explanation {
     width: 30vw;
     height: 80vh;
-    background-color: darkblue;
+    /* background-color: darkblue; */
     transition: opacity 0.2s ease-in-out; /* Smooth transition */
     display: flex;
     justify-content: center;
@@ -1403,9 +1456,9 @@ a.sub-navigation-link:hover {
     z-index: -2;
     position: fixed;
     left: 0;
-    bottom:0;
-    top:20vh;
-    right:65%;
+    bottom: 0;
+    top: 20vh;
+    right: 65%;
   }
   .project-trigger {
     width: 30vw;
@@ -1419,13 +1472,23 @@ a.sub-navigation-link:hover {
     z-index: -2;
     position: relative;
   }
-  .trigger-selection{
+  .trigger-selection {
     background-color: magenta;
   }
-  .project-visuals{
-
+  .project-visuals {
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    margin-right: 3vw;
   }
-
+  .project-visuals img {
+    height: 50vh;
+    /* border: var(--primary-color) 1px solid; */
+    filter: drop-shadow(1px 1px 2px var(--text-color));
+  }
 
   /* Project Page Flex Direction on Large Devices */
   .project-wrapper {

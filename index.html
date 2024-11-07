@@ -8,7 +8,9 @@
     />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:image" content="screenshot.jpg" /> <!--Change content later-->
+    <meta property="og:image" content="screenshot.jpg" /> <!--Change content 
+    later-->
+    <link rel="icon" type="image/x-icon" href="assets/branding-images/jcubcreative-favicon.ico">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
@@ -20,20 +22,26 @@
     ></script>
 
     <script>
-      // Check saved color mode in local storage and set appropriate CSS
       (function() {
         const colorMode = localStorage.getItem("colorMode");
         if (colorMode === "1") {
-          document.documentElement.style.setProperty("--outline", "var(--blue1)");
           document.documentElement.style.setProperty("--bg-color", "var(--dark)");
           document.documentElement.style.setProperty("--bg-color2", "var(--dark-grey)");
           document.documentElement.style.setProperty("--text-color", "var(--light-grey)");
           document.documentElement.style.setProperty("--primary-color", "var(--yellow1)");
           document.documentElement.style.setProperty("--secondary-color", "var(--blue2)");
           document.documentElement.style.setProperty("--link-color", "var(--yellow2)");
+        } else {
+          document.documentElement.style.setProperty("--bg-color", "var(--light)");
+          document.documentElement.style.setProperty("--bg-color2", "var(--light-grey)");
+          document.documentElement.style.setProperty("--text-color", "var(--dark)");
+          document.documentElement.style.setProperty("--primary-color", "var(--blue1)");
+          document.documentElement.style.setProperty("--secondary-color", "var(--yellow1)");
         }
       })();
     </script>
+    <!--link to css style sheet-->
+    <link rel="stylesheet" href="./styles/style.css" />
 
     <!--link to javascript-->
     <script src="./js/jquery-3.7.1.min.js" defer></script>
@@ -41,9 +49,6 @@
     <script src="./js/project_replace.js" defer></script>
     <script src="./js/color-change.js" defer></script>
     <script src="./js/size-change.js" defer></script>
-
-    <!--link to css style sheet-->
-    <link rel="stylesheet" href="./styles/style.css" />
   </head>
 
   <body class="work-page">
@@ -127,8 +132,12 @@
             
             <ul id="menu" class="menu visuallyhidden hidden">
                 <li><a href="about.html" class="nav-item">about</a></li>
-                <li><a href="playground.html" class="nav-item">fun</a></li>
+                <!-- <li><a href="playground.html" class="nav-item">fun</a></li> -->
                 <li><button id="colorChange" class="nav-item" onclick="changeColor()">dark mode</button></li>
+                <li class="contact-buttons">
+                  <button><i class="fa-solid fa-envelope"></i></button>
+                  <button><i class="fa-brands fa-linkedin-in"></i></button>
+                </li>
             </ul>
         </nav>
       </header>
