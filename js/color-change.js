@@ -20,10 +20,21 @@ function changeColor() {
   localStorage.setItem("colorMode", color);
 }
 
-// Function to load color mode from local storage on page load
+// Function to load color mode from local storage or system preference on page load
 function loadColorMode() {
-  // Get saved color mode from local storage, or default to 0 (dark mode)
-  color = parseInt(localStorage.getItem("colorMode")) || 0;
+  // Check if a color mode is saved in localStorage
+  const savedColorMode = localStorage.getItem("colorMode");
+
+  if (savedColorMode !== null) {
+    // If a color mode is saved, use it
+    color = parseInt(savedColorMode);
+  } else {
+    // If no saved color mode, check system preference
+    color = window.matchMedia("(prefers-color-scheme: dark)").matches ? 1 : 0;
+    // Save the initial color mode preference for future visits
+    localStorage.setItem("colorMode", color);
+  }
+
   applyColorMode();
 }
 
@@ -31,6 +42,7 @@ function loadColorMode() {
 window.addEventListener("DOMContentLoaded", loadColorMode);
 
 function changeLogoColor() {
+  // Set CSS variables for dark mode
   document.documentElement.style.setProperty("--outline", "var(--blue1)");
   document.documentElement.style.setProperty("--bg-color", "var(--dark)");
   document.documentElement.style.setProperty("--bg-color2", "var(--dark-grey)");
@@ -50,6 +62,7 @@ function changeLogoColor() {
 }
 
 function changeLogoColorBack() {
+  // Set CSS variables for light mode
   document.documentElement.style.setProperty("--outline", "var(--blue1)");
   document.documentElement.style.setProperty("--bg-color", "var(--light)");
   document.documentElement.style.setProperty(

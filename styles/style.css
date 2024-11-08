@@ -108,7 +108,15 @@ html {
   --project-image-2: url(/assets/project-images/susan-rodgers/jacob-chong--ui-ux-webflow--susan-rodgers--hero.JPG);
   --project-image-3: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/316293/phone.jpg);
 }
-
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: var(--dark);
+    --bg-color2: var(--dark-grey);
+    --text-color: --light-grey;
+    --primary-color: var(--yellow1);
+    --secondary-color: var(--blue2);
+  }
+}
 body {
   font-family: var(--body-typeface);
   color: var(--text-color);
