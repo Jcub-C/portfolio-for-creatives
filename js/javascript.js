@@ -107,7 +107,12 @@ window.addEventListener('scroll', function() {
     { target: document.getElementById('target-element2'), trigger: document.getElementById('trigger-selection2') },
     { target: document.getElementById('target-element3'), trigger: document.getElementById('trigger-selection3') },
     { target: document.getElementById('target-element4'), trigger: document.getElementById('trigger-selection4') },
-    { target: document.getElementById('target-element5'), trigger: document.getElementById('trigger-selection5') }
+    { target: document.getElementById('target-element5'), trigger: document.getElementById('trigger-selection5') },
+    { target: document.getElementById('target-element6'), trigger: document.getElementById('trigger-selection6') },
+    { target: document.getElementById('target-element7'), trigger: document.getElementById('trigger-selection7') },
+    { target: document.getElementById('target-element8'), trigger: document.getElementById('trigger-selection8') },
+    { target: document.getElementById('target-element9'), trigger: document.getElementById('trigger-selection9') },
+    { target: document.getElementById('target-element10'), trigger: document.getElementById('trigger-selection10') }
   ];
 
   // Define the opacity range in viewport height percentages
@@ -138,5 +143,33 @@ window.addEventListener('scroll', function() {
     target.style.opacity = opacity;
   });
 });
+
+
+//project carousel
+
+const slider = document.querySelector('.slider');
+let scrollPosition = 0;
+
+function scrollNext() {
+  const cardWidth = slider.offsetWidth; // Get the slider's width
+  scrollPosition += cardWidth;
+  if (scrollPosition >= slider.scrollWidth) {
+    scrollPosition = 0; // Loop back to the start
+  }
+  slider.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+}
+
+function scrollPrev() {
+  const cardWidth = slider.offsetWidth;
+  scrollPosition -= cardWidth;
+  if (scrollPosition < 0) {
+    scrollPosition = slider.scrollWidth - cardWidth; // Go to the last card
+  }
+  slider.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+}
+
+// Event listeners for buttons (you'll need to add these in your HTML)
+document.querySelector('.next-button').addEventListener('click', scrollNext);
+document.querySelector('.prev-button').addEventListener('click', scrollPrev);
 
 

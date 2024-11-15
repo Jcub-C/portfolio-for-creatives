@@ -105,7 +105,7 @@ html {
 
   /*project stuff*/
   --project-image-1: url(/assets/prep-photos/jacob-chong_3030_prep_image.jpg);
-  --project-image-2: url(/assets/project-images/susan-rodgers/jacob-chong--ui-ux-webflow--susan-rodgers--hero.JPG);
+  --project-image-2: url(/assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-logo.svg);
   --project-image-3: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/316293/phone.jpg);
 }
 @media (prefers-color-scheme: dark) {
@@ -379,6 +379,7 @@ nav burger icon
 }
 
 .menu-icon {
+  pointer-events: all;
   --s: 5vw; /* size */
   --bg: #0000; /*background color*/
   position: relative;
@@ -570,9 +571,11 @@ drop down menu
   background: var(--text-color);
   transition: all 0.4s ease-out 0s;
   z-index: 2;
+  pointer-events: all;
 }
 
 .menu li {
+  pointer-events: all;
   text-align: center;
   opacity: 0; /* Initially hidden */
   transform: translateY(20px); /* Start slightly below their final position */
@@ -712,6 +715,7 @@ drop down menu
 }
 .project-image-2 {
   background-image: var(--project-image-2);
+  background-size: 60%;
 }
 .project-image-3 {
   background-image: var(--project-image-3);
@@ -973,14 +977,24 @@ drop down menu
 }
 
 .error-page-wrapper {
+  height: 80vh;
 }
 
 .error-page-inner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  height: 100%;
+  padding:20%;
+  padding-top:15%;
 }
 
 .error-page-title {
-  color: var(--accent-color);
+  color:var(--primary-color);
+  font-family: var(--heading2-typeface);
+  font-size: 20vh;
 }
 
 /*
@@ -1322,6 +1336,8 @@ a.sub-navigation-link:hover {
   }
   .portfolioPiece2 {
     background-image: var(--project-image-2);
+    background-size: 60%;
+    margin-top:-5vh;
     display: none;
     z-index: -2;
   }
@@ -1377,10 +1393,18 @@ a.sub-navigation-link:hover {
   .white {
     color: white;
   }
+  .project-page{
+    pointer-events: none;
+  }
+  .hero-wrapper{
+    background-color: var(--bg-color);
+    position: relative;
+    z-index: -20;
+  }
   .project-hero {
     height: 80vh;
     width: 100%;
-    background-image: url(../assets/project-images/susan-rodgers/jacob-chong--ui-ux-webflow--susan-rodgers--hero.JPG);
+    background-image: url(../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-hero.JPG);
     background-position: right;
     background-repeat: no-repeat;
     background-color: #000;
@@ -1436,24 +1460,45 @@ a.sub-navigation-link:hover {
     letter-spacing: normal;
     padding: 0px 3vw 0px 3vw;
   }
-  .project-screen-1,
-  .project-screen-2,
-  .project-screen-3,
-  .project-screen-4,
-  .project-screen-5 {
+  .project-screen {
     height: 85vh;
     width: 100%;
     display: flex;
     flex-direction: row;
-    /* background-color: purple; */
-    z-index: -3;
+    z-index: -6;
     position: relative;
     margin-top: 20vh;
     padding-right: 0;
   }
+  .project-trigger {
+    width: 30%;
+    height: 80vh;
+    transition: opacity 0.2s ease-in-out; /* Smooth transition */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* hide it */
+    z-index: -2;
+    position: relative;
+    background-color: pink;
+  }
+  .trigger-selection {
+    background-color: magenta;
+  }
+  .project-screen-bg{
+    height:100%;
+    width:30%;
+    z-index: -19;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right:65%;
+    background-color: var(--bg-color2);
+  }
 
-  .project-explanation {
-    width: 30vw;
+  .project-show {
+    width: 100%;
     height: 80vh;
     /* background-color: darkblue; */
     transition: opacity 0.2s ease-in-out; /* Smooth transition */
@@ -1461,38 +1506,34 @@ a.sub-navigation-link:hover {
     justify-content: center;
     align-items: center;
     opacity: 0; /* Start hidden */
-    z-index: -2;
+    z-index: -5;
     position: fixed;
     left: 0;
     bottom: 0;
     top: 20vh;
-    right: 65%;
+    right: 0;
   }
-  .project-trigger {
-    width: 30vw;
-    height: 80vh;
-    background-color: orange;
+  .project-explanation {
+    width: 30%;
+    height: 100%;
+    /* background-color: darkblue; */
     transition: opacity 0.2s ease-in-out; /* Smooth transition */
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0; /* Start hidden */
-    z-index: -2;
-    position: relative;
-  }
-  .trigger-selection {
-    background-color: magenta;
   }
   .project-visuals {
-    width: 70vw;
+    transition: opacity 0.2s ease-in-out;
+    width: 70%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    position:relative;
+    overflow: hidden;
     background-color: var(--bg-color);
-    border-radius: 10px;
-    margin-right: 3vw;
   }
-  .project-visuals img {
+  .project-visuals img,.project-visuals object {
     height: 50vh;
     /* border: var(--primary-color) 1px solid; */
     filter: drop-shadow(1px 1px 2px var(--text-color));
@@ -1502,11 +1543,66 @@ a.sub-navigation-link:hover {
   .project-wrapper {
     flex-direction: row;
   }
+  .img-shift{
+    height:auto ;
+    width:50% ;
+    margin-bottom:30vh;
+    margin-right:-10%;
+  }
+  .img-shift2{
+    height:auto ;
+    width:50% ;
+    margin-top:30vh;
+    margin-left:-10%;
+  }
+  .slider {
+    display: flex;
+    overflow: hidden; /* Hides non-visible cards */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+    width: 100%; /* Set a fixed width for the carousel */
+  }
+  
+  .card {
+    width: 100%;
+    display: flex;
+    flex-direction: row; /* Stack images vertically */
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+  }
+  
+  .card img {
+    width: auto;
+    height: 35%;
+  }
+  .project-btn {
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .project-btn.prev-button {
+    left: 10px;
+    pointer-events: all;
+  }
+  
+  .project-btn.next-button {
+    right: 10px;
+    pointer-events: all;
+  }
+  
 }
 
-.holding-page-title {
-  font-size: 2rem;
-}
+
+
+
+
 
 h1 {
   font-size: 4.275rem;
