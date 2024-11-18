@@ -824,50 +824,6 @@ drop down menu
   }
 }
 
-/* Global Footer
-
-███████  ██████   ██████  ████████ ███████ ██████  
-██      ██    ██ ██    ██    ██    ██      ██   ██ 
-█████   ██    ██ ██    ██    ██    █████   ██████  
-██      ██    ██ ██    ██    ██    ██      ██   ██ 
-██       ██████   ██████     ██    ███████ ██   ██ 
-                                                   
-*/
-
-.global-footer {
-  display: none;
-  /* display: grid; */
-  grid-template-columns: 1fr;
-  grid-gap: 3rem;
-  min-height: 50vh;
-  background: var(--bg-color2);
-  padding: 1rem;
-}
-
-.footer-item-1 {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-}
-
-.footer-item-2 {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-}
-
-.footer-item-3 {
-  grid-column: 1 / 2;
-  grid-row: 3 / 4;
-}
-
-.footer-item-4 {
-  grid-column: 1 / 2;
-  grid-row: 4 / 5;
-}
-
-.awards-list {
-  margin-bottom: 2rem;
-}
-
 /* Project Pages 
 
 ██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗███████╗
@@ -878,78 +834,230 @@ drop down menu
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   ╚══════╝
                                                                                                
 */
-.project-logos {
-  width: 30%;
+.light {
+  color: white;
 }
-.project-wrapper {
+.project-hero-image{
+  position:relative;
+  margin-top:0;
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  border: none;
+  background: #000;
+  object-fit: cover;
+  overflow: clip;
+  margin-left:0vw;
+}
+.project-page{
+  pointer-events: none;
+}
+.hero-wrapper{
+  background-color: var(--bg-color);
+  position: relative;
+  z-index: -20;
+}
+.project-hero{
+  height: 140vh;
+  width: 100%;
+  background-image:none;/*changed*/
+  background-position: center;/*changed*/
+  background-repeat: no-repeat;
+  background-color: #000;
+  margin-top: 0;/*changed*/
+  position: relative;
+  z-index: -4;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;/*changed*/
+  padding-left: 7.5%; /*changed*/
+  padding-bottom: 0%;/*changed*/
+  padding-right: 7.5%;/*changed*/
 }
-
-/* Sidebar */
-.project-aside {
-  width: 96%;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  color: black;
-  background: white;
+.project-page-title {
+  font-size: calc(3rem+2vw);
+  font-family: var(--heading-typeface);
+  font-weight: 400;
+  letter-spacing: normal;
+  margin-bottom: 1rem;
 }
-
-.project-navigation {
+.project-date {
+  font-size: calc(1rem+2vw);
+  font-family: var(--heading-typeface);
+  font-weight: 400;
+  letter-spacing: normal;
+}
+.details {
+  line-height: 1rem;
+}
+.project-genre {
+  font-size: calc(.5rem+2.5vw);
+  font-family: var(--heading-typeface);
+  font-weight: 400;
+  line-height: 1rem;
+  letter-spacing: normal;
+}
+.collaborators {
+  font-size: 1.5rem;
+  font-family: var(--heading-typeface);
+  font-weight: 400;
+  letter-spacing: normal;
+}
+.project-headline {
+  font-size: 2rem;
+  font-family: var(--body-typeface);
+  font-weight: 400;
+  width: 100%;
+  letter-spacing: normal;
+}
+.explanation-text {
+  font-size: 1.5rem;
+  font-family: var(--body-typeface);
+  font-weight: 400;
+  letter-spacing: normal;
+  padding: 0px 3vw 0px 3vw;
+}
+.project-screen {
+  height: 85vh;
+  width: 100%;
   display: flex;
   flex-direction: row;
-  flex: 1;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 1vh;
+  z-index: -6;
+  position: relative;
+  margin-top: 20vh;
+  padding-right: 0;
+}
+.project-trigger {
+  width: 30%;
+  height: 80vh;
+  transition: opacity 0.2s ease-in-out; /* Smooth transition */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* hide it */
+  z-index: -2;
+  position: relative;
+  background-color: pink;
+}
+.trigger-selection {
+  background-color: magenta;
+}
+.project-screen-bg{
+  height:100%;
+  width:30%;
+  z-index: -19;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left:0;
+  right:0; /*changed*/
+  background-color: var(--bg-color2);
 }
 
-.arrow {
-  padding: 0;
+.project-show {
+  width: 100%;
+  height: 80vh;
+  /* background-color: darkblue; */
+  transition: opacity 0.2s ease-in-out; /* Smooth transition */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Start hidden */
+  z-index: -5;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 20vh;
+  right: 0;
 }
-
-.project-image-container {
+.project-explanation {
+  width: 30%;
+  height: 100%;
+  /* background-color: darkblue; */
+  transition: opacity 0.2s ease-in-out; /* Smooth transition */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project-visuals {
+  transition: opacity 0.2s ease-in-out;
+  width: 70%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  position:relative;
+  overflow: hidden;
+  background-color: var(--bg-color);
+}
+.project-visuals img,.project-visuals object {
+  height: 50vh;
+  /* border: var(--primary-color) 1px solid; */
+  filter: drop-shadow(1px 1px 2px var(--text-color));
 }
 
-.project-image {
-  width: 100%;
-  /* min-height should be deleted if you want to remove space between project images on project pages */
+/* Project Page Flex Direction on Large Devices */
+.project-wrapper {
+  flex-direction: row;
+}
+.img-shift{
+  height:auto ;
+  width:50% ;
+  margin-bottom:30vh;
+  margin-right:-10%;
+}
+.img-shift2{
+  height:auto ;
+  width:50% ;
+  margin-top:30vh;
+  margin-left:-10%;
+}
+.slider {
   display: flex;
+  overflow: hidden; /* Hides non-visible cards */
+  scroll-behavior: smooth; /* Smooth scrolling effect */
+  width: 100%; /* Set a fixed width for the carousel */
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: row; /* Stack images vertically */
   align-items: center;
   justify-content: center;
+  gap: 3vw;
 }
 
-.large-emoji-placeholder {
-  font-size: 12rem; /* This is for making the placeholder emojis large and should be deleted */
+.card img {
+  width: auto;
+  height: 35%;
+}
+.project-btn {
+  position: absolute;
+  z-index: 6;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
-.text-section {
-  width: 100%;
+.project-btn.prev-button {
+  left: 10px;
+  pointer-events: all;
 }
 
-.project-text {
-  width: 100%;
-  font-size: 3.25rem;
-  padding: 3rem;
+.project-btn.next-button {
+  right: 10px;
+  pointer-events: all;
 }
 
-/* Main Project Image Area */
-
-.project-details {
-  width: 96%;
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  background-image: black;
+/**/
+.susan-bg{
+  
 }
-
 /*
 ███████╗████████╗██╗   ██╗██╗     ███████╗     ██████╗ ██╗   ██╗██╗██████╗ ███████╗
 ██╔════╝╚══██╔══╝╚██╗ ██╔╝██║     ██╔════╝    ██╔════╝ ██║   ██║██║██╔══██╗██╔════╝
@@ -1386,11 +1494,11 @@ a.sub-navigation-link:hover {
   }
 
   /*
-█   █ ████ ████    █████      ████ ████    █████    ██ ████ ████ ██████
-█████ ███  ████   ██   ██     ████ ████   ██   ██   ██ ███  ██     ██
-█   █ ████ ██  ██  █████      █    ██  ██  █████  ████ ████ ████   ██
+████ ████    █████    ██ ████ ████ ██████
+████ ████   ██   ██   ██ ███  ██     ██
+█    ██  ██  █████  ████ ████ ████   ██
   */
-  .white {
+  .light {
     color: white;
   }
   .project-page{
@@ -1404,7 +1512,7 @@ a.sub-navigation-link:hover {
   .project-hero {
     height: 80vh;
     width: 100%;
-    background-image: url(../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-hero.JPG);
+    background-image: url(../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-hero-image.JPG);
     background-position: right;
     background-repeat: no-repeat;
     background-color: #000;
