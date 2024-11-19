@@ -837,9 +837,9 @@ drop down menu
 .light {
   color: white;
 }
-.project-hero-image{
-  position:relative;
-  margin-top:0;
+.project-hero-image {
+  position: relative;
+  margin-top: 0;
   width: 100%;
   height: 50vh;
   position: relative;
@@ -847,32 +847,34 @@ drop down menu
   background: #000;
   object-fit: cover;
   overflow: clip;
-  margin-left:0vw;
+  margin-left: 0vw;
+  margin-bottom: 4vh;
 }
-.project-page{
+.project-page {
   pointer-events: none;
 }
-.hero-wrapper{
+.hero-wrapper {
   background-color: var(--bg-color);
   position: relative;
   z-index: -20;
 }
-.project-hero{
+.project-hero {
   height: 140vh;
   width: 100%;
-  background-image:none;/*changed*/
-  background-position: center;/*changed*/
+  background-image: none; /*changed*/
+  background-position: center; /*changed*/
   background-repeat: no-repeat;
+  background-size: 80%;
   background-color: #000;
-  margin-top: 0;/*changed*/
+  margin-top: 0; /*changed*/
   position: relative;
   z-index: -4;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;/*changed*/
+  justify-content: flex-start; /*changed*/
   padding-left: 7.5%; /*changed*/
-  padding-bottom: 0%;/*changed*/
-  padding-right: 7.5%;/*changed*/
+  padding-bottom: 0%; /*changed*/
+  padding-right: 7.5%; /*changed*/
 }
 .project-page-title {
   font-size: calc(3rem+2vw);
@@ -891,17 +893,18 @@ drop down menu
   line-height: 1rem;
 }
 .project-genre {
-  font-size: calc(.5rem+2.5vw);
+  font-size: calc(0.5rem+2.5vw);
   font-family: var(--heading-typeface);
   font-weight: 400;
   line-height: 1rem;
   letter-spacing: normal;
 }
 .collaborators {
-  font-size: 1.5rem;
+  font-size: calc(0.5rem+2.5vw);
   font-family: var(--heading-typeface);
   font-weight: 400;
   letter-spacing: normal;
+  margin-bottom: 5vh;
 }
 .project-headline {
   font-size: 2rem;
@@ -920,7 +923,7 @@ drop down menu
 .project-screen {
   height: 85vh;
   width: 100%;
-  display: flex;
+  display: none;
   flex-direction: row;
   z-index: -6;
   position: relative;
@@ -937,20 +940,16 @@ drop down menu
   opacity: 0; /* hide it */
   z-index: -2;
   position: relative;
-  background-color: pink;
 }
-.trigger-selection {
-  background-color: magenta;
-}
-.project-screen-bg{
-  height:100%;
-  width:30%;
+.project-screen-bg {
+  height: 100%;
+  width: 30%;
   z-index: -19;
   position: fixed;
   top: 0;
   bottom: 0;
-  left:0;
-  right:0; /*changed*/
+  left: 0;
+  right: 65%; /*changed*/
   background-color: var(--bg-color2);
 }
 
@@ -986,11 +985,12 @@ drop down menu
   display: flex;
   align-items: center;
   justify-content: center;
-  position:relative;
+  position: relative;
   overflow: hidden;
   background-color: var(--bg-color);
 }
-.project-visuals img,.project-visuals object {
+.project-visuals .image,
+.project-visuals .svgator-animation {
   height: 50vh;
   /* border: var(--primary-color) 1px solid; */
   filter: drop-shadow(1px 1px 2px var(--text-color));
@@ -1000,17 +1000,17 @@ drop down menu
 .project-wrapper {
   flex-direction: row;
 }
-.img-shift{
-  height:auto ;
-  width:50% ;
-  margin-bottom:30vh;
-  margin-right:-10%;
+.img-shift {
+  height: auto;
+  width: 50%;
+  margin-bottom: 30vh;
+  margin-right: -10%;
 }
-.img-shift2{
-  height:auto ;
-  width:50% ;
-  margin-top:30vh;
-  margin-left:-10%;
+.img-shift2 {
+  height: auto;
+  width: 50%;
+  margin-top: 30vh;
+  margin-left: -10%;
 }
 .slider {
   display: flex;
@@ -1028,10 +1028,6 @@ drop down menu
   gap: 3vw;
 }
 
-.card img {
-  width: auto;
-  height: 35%;
-}
 .project-btn {
   position: absolute;
   z-index: 6;
@@ -1055,8 +1051,7 @@ drop down menu
 }
 
 /**/
-.susan-bg{
-  
+.susan-bg {
 }
 /*
 ███████╗████████╗██╗   ██╗██╗     ███████╗     ██████╗ ██╗   ██╗██╗██████╗ ███████╗
@@ -1095,12 +1090,12 @@ drop down menu
   align-items: center;
   text-align: center;
   height: 100%;
-  padding:20%;
-  padding-top:15%;
+  padding: 20%;
+  padding-top: 15%;
 }
 
 .error-page-title {
-  color:var(--primary-color);
+  color: var(--primary-color);
   font-family: var(--heading2-typeface);
   font-size: 20vh;
 }
@@ -1445,7 +1440,7 @@ a.sub-navigation-link:hover {
   .portfolioPiece2 {
     background-image: var(--project-image-2);
     background-size: 60%;
-    margin-top:-5vh;
+    margin-top: -5vh;
     display: none;
     z-index: -2;
   }
@@ -1501,10 +1496,10 @@ a.sub-navigation-link:hover {
   .light {
     color: white;
   }
-  .project-page{
+  .project-page {
     pointer-events: none;
   }
-  .hero-wrapper{
+  .hero-wrapper {
     background-color: var(--bg-color);
     position: relative;
     z-index: -20;
@@ -1512,10 +1507,11 @@ a.sub-navigation-link:hover {
   .project-hero {
     height: 80vh;
     width: 100%;
-    background-image: url(../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-hero-image.JPG);
+    background-image: url(../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-hero.JPG);
     background-position: right;
     background-repeat: no-repeat;
     background-color: #000;
+    background-size: 80%;
     margin-top: -1.2vh;
     position: relative;
     z-index: -4;
@@ -1569,40 +1565,7 @@ a.sub-navigation-link:hover {
     padding: 0px 3vw 0px 3vw;
   }
   .project-screen {
-    height: 85vh;
-    width: 100%;
     display: flex;
-    flex-direction: row;
-    z-index: -6;
-    position: relative;
-    margin-top: 20vh;
-    padding-right: 0;
-  }
-  .project-trigger {
-    width: 30%;
-    height: 80vh;
-    transition: opacity 0.2s ease-in-out; /* Smooth transition */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0; /* hide it */
-    z-index: -2;
-    position: relative;
-    background-color: pink;
-  }
-  .trigger-selection {
-    background-color: magenta;
-  }
-  .project-screen-bg{
-    height:100%;
-    width:30%;
-    z-index: -19;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left:0;
-    right:65%;
-    background-color: var(--bg-color2);
   }
 
   .project-show {
@@ -1637,11 +1600,12 @@ a.sub-navigation-link:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    position:relative;
+    position: relative;
     overflow: hidden;
     background-color: var(--bg-color);
   }
-  .project-visuals img,.project-visuals object {
+  .project-visuals .image,
+  .project-visuals .svgator-animation {
     height: 50vh;
     /* border: var(--primary-color) 1px solid; */
     filter: drop-shadow(1px 1px 2px var(--text-color));
@@ -1651,38 +1615,46 @@ a.sub-navigation-link:hover {
   .project-wrapper {
     flex-direction: row;
   }
-  .img-shift{
-    height:auto ;
-    width:50% ;
-    margin-bottom:30vh;
-    margin-right:-10%;
+  .img-shift {
+    height: auto;
+    width: 50%;
+    margin-bottom: 30vh;
+    margin-right: -10%;
   }
-  .img-shift2{
-    height:auto ;
-    width:50% ;
-    margin-top:30vh;
-    margin-left:-10%;
+  .img-shift2 {
+    height: auto;
+    width: 50%;
+    margin-top: 30vh;
+    margin-left: -10%;
   }
   .slider {
     display: flex;
-    overflow: hidden; /* Hides non-visible cards */
-    scroll-behavior: smooth; /* Smooth scrolling effect */
-    width: 100%; /* Set a fixed width for the carousel */
-  }
-  
-  .card {
+    overflow: hidden;
+    scroll-behavior: smooth;
     width: 100%;
+    scroll-snap-type: x mandatory;
+  }
+
+  .card {
+    flex: 0 0 100%; /* Ensure cards do not shrink or grow */
     display: flex;
-    flex-direction: row; /* Stack images vertically */
+    flex-direction: row; /* Align images horizontally */
     align-items: center;
     justify-content: center;
     gap: 3vw;
+    scroll-snap-align: start;
   }
-  
-  .card img {
-    width: auto;
-    height: 35%;
+
+  .card .carousel-desktop-img {
+    width: 60%;
+    height: auto;
   }
+
+  .card .carousel-mobile-img {
+    width: 16.6%;
+    height: auto;
+  }
+
   .project-btn {
     position: absolute;
     z-index: 6;
@@ -1694,23 +1666,35 @@ a.sub-navigation-link:hover {
     padding: 10px 20px;
     cursor: pointer;
   }
-  
+
   .project-btn.prev-button {
     left: 10px;
     pointer-events: all;
   }
-  
+
   .project-btn.next-button {
     right: 10px;
     pointer-events: all;
   }
-  
+  .carousel-indicators {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+
+  .indicator.active {
+    background: #333;
+  }
 }
-
-
-
-
-
 
 h1 {
   font-size: 4.275rem;
