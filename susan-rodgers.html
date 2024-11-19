@@ -1048,6 +1048,7 @@
                 id="menu-toggle"
                 class="burger"
                 role="button"
+                aria-pressed="true"
               />
               <label
                 for="menu-toggle"
@@ -1067,17 +1068,14 @@
               </button>
             </li>
             <li class="contact-buttons">
-              <button>
-                <a href="mailto: jcubcreative@gmail.com"
-                  ><i class="fa-solid fa-envelope"></i
-                ></a>
+              <button onclick="location.href='mailto:jcubcreative@gmail.com'">
+                <i class="fa-solid fa-envelope"></i>
               </button>
-              <button>
-                <a
-                  href="https://www.instagram.com/jcubdoesstuff/"
-                  target="_blank"
-                  ><i class="fa-brands fa-linkedin-in"></i
-                ></a>
+
+              <button
+                onclick="window.open('https://www.instagram.com/jcubdoesstuff/', '_blank')"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
               </button>
             </li>
           </ul>
@@ -1266,7 +1264,8 @@
           </div>
           <div class="project-visuals">
             <img
-              image
+              alt="slide show showing different variations of the project page"
+              class="image"
               src="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-project-page-process.gif"
             />
           </div>
@@ -1278,12 +1277,12 @@
               forward
             </p>
           </div>
-          <div class="project-visuals">
+          <div class="project-visuals carousel">
             <button class="prev-button project-btn" aria-label="Previous Slide">
               Prev
             </button>
             <div class="slider">
-              <div class="card">
+              <div class="card active">
                 <img
                   class="carousel-desktop-img"
                   src="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-home-page-desktop.jpg"
@@ -1355,7 +1354,9 @@
           <!-- <div class="carousel-indicators">
             <span class="indicator active" data-index="0"></span>
             <span class="indicator" data-index="1"></span>
-            Add more indicators based on the number of cards
+            <span class="indicator" data-index="2"></span>
+            <span class="indicator" data-index="3"></span>
+            <span class="indicator" data-index="4"></span>
           </div> -->
         </div>
         <!-- <div class="project-show" id="target-element7">

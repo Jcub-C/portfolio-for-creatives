@@ -1047,6 +1047,7 @@
                 id="menu-toggle"
                 class="burger"
                 role="button"
+                aria-pressed="true"
               />
               <label
                 for="menu-toggle"
@@ -1059,10 +1060,21 @@
 
           <ul id="menu" class="menu visuallyhidden hidden">
             <li><a href="about.html" class="nav-item">about</a></li>
-            <li><a href="playground.html" class="nav-item">fun</a></li>
+            <!-- <li><a href="playground.html" class="nav-item">fun</a></li> -->
             <li>
               <button id="colorChange" class="nav-item" onclick="changeColor()">
                 dark mode
+              </button>
+            </li>
+            <li class="contact-buttons">
+              <button onclick="location.href='mailto:jcubcreative@gmail.com'">
+                <i class="fa-solid fa-envelope"></i>
+              </button>
+
+              <button
+                onclick="window.open('https://www.instagram.com/jcubdoesstuff/', '_blank')"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
               </button>
             </li>
           </ul>

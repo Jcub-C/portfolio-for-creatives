@@ -98,7 +98,7 @@ document.addEventListener("click", function (event) {
 });
 
 //projects scroll fade
-window.addEventListener("scroll", function () {
+function handleScrollFade() {
   const elements = [
     {
       target: document.getElementById("target-element1"),
@@ -141,15 +141,12 @@ window.addEventListener("scroll", function () {
       trigger: document.getElementById("trigger-selection10"),
     },
   ];
-
-  // Define the opacity range in viewport height percentages
-  const fadeInStart = window.innerHeight * 0.35; // 35% of viewport height
-  const fullOpacityStart = window.innerHeight * 0.4; // 40% of viewport height
-  const fadeOutStart = window.innerHeight * 0.8; // 80% of viewport height
-  const fadeOutEnd = window.innerHeight * 0.85; // 85% of viewport height
+  const fadeInStart = window.innerHeight * 0.05;
+  const fullOpacityStart = window.innerHeight * 0.1;
+  const fadeOutStart = window.innerHeight * 0.9;
+  const fadeOutEnd = window.innerHeight * 0.95;
 
   elements.forEach(({ target, trigger }) => {
-    // Skip iteration if either target or trigger is null
     if (!target || !trigger) {
       console.warn("Missing target or trigger element:", { target, trigger });
       return;
@@ -159,108 +156,65 @@ window.addEventListener("scroll", function () {
     let opacity;
 
     if (triggerPosition >= fadeInStart && triggerPosition <= fullOpacityStart) {
-      // Gradually increase opacity from 0 to 1
       opacity =
         (triggerPosition - fadeInStart) / (fullOpacityStart - fadeInStart);
     } else if (
       triggerPosition > fullOpacityStart &&
       triggerPosition <= fadeOutStart
     ) {
-      // Set full opacity (1) between 40% and 80% viewport height
       opacity = 1;
     } else if (
       triggerPosition > fadeOutStart &&
       triggerPosition <= fadeOutEnd
     ) {
-      // Gradually decrease opacity from 1 to 0
       opacity =
         1 - (triggerPosition - fadeOutStart) / (fadeOutEnd - fadeOutStart);
     } else {
-      // Outside defined ranges, set opacity to 0
       opacity = 0;
     }
 
-    // Apply the calculated opacity to the target element
     target.style.opacity = opacity;
-  });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  console.warn("Missing element IDs", { target, trigger });
-});
-
-//project carousel
-document.addEventListener("DOMContentLoaded", () => {
-  const slider = document.querySelector(".slider");
-  const cards = document.querySelectorAll(".card");
-  const nextButton = document.querySelector(".next-button");
-  const prevButton = document.querySelector(".prev-button");
-
-  const totalCards = cards.length;
-  let currentIndex = 0;
-
-  function scrollToCard(index) {
-    const cardWidth = cards[index].offsetWidth;
-    const scrollPosition = cardWidth * index;
-    slider.scrollTo({
-      left: scrollPosition,
-      behavior: "smooth",
-    });
-    console.log(
-      `Scrolling to card ${index + 1} at position ${scrollPosition}px`
-    );
-  }
-
-  function scrollNext() {
-    currentIndex++;
-    if (currentIndex >= totalCards) {
-      currentIndex = 0; // Loop back to the first card
-    }
-    scrollToCard(currentIndex);
-  }
-
-  function scrollPrev() {
-    currentIndex--;
-    if (currentIndex < 0) {
-      currentIndex = totalCards - 1; // Loop to the last card
-    }
-    scrollToCard(currentIndex);
-  }
-
-  nextButton.addEventListener("click", scrollNext);
-  prevButton.addEventListener("click", scrollPrev);
-
-  // Optional: Update currentIndex based on manual scroll
-  slider.addEventListener("scroll", () => {
-    const cardWidth = cards[0].offsetWidth;
-    currentIndex = Math.round(slider.scrollLeft / cardWidth);
-    console.log(`Current card index: ${currentIndex + 1}`);
-  });
-
-  // Initial scroll position
-  scrollToCard(currentIndex);
-});
-
-// Scroll Indicators
-const indicators = document.querySelectorAll(".indicator");
-
-indicators.forEach((indicator) => {
-  indicator.addEventListener("click", (e) => {
-    const index = parseInt(e.target.getAttribute("data-index"));
-    currentIndex = index;
-    scrollToCard(currentIndex);
-    updateIndicators();
-  });
-});
-
-function updateIndicators() {
-  indicators.forEach((indicator, idx) => {
-    indicator.classList.toggle("active", idx === currentIndex);
   });
 }
 
-// Update indicators on scroll
-slider.addEventListener("scroll", () => {
-  const cardWidth = cards[0].offsetWidth;
-  currentIndex = Math.round(slider.scrollLeft / cardWidth);
-  updateIndicators();
+// Media query check
+function setupScrollListener() {
+  const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+
+  if (isDesktop) {
+    // Add the scroll event listener if on desktop
+    window.addEventListener("scroll", handleScrollFade);
+  } else {
+    // Remove the scroll event listener if not on desktop
+    window.removeEventListener("scroll", handleScrollFade);
+  }
+}
+
+// Initial setup and re-check on window resize
+setupScrollListener();
+window.addEventListener("resize", setupScrollListener);
+
+//project carousel
+
+const cards = document.querySelectorAll(".card");
+let currentIndex = 0;
+
+function showCard(index) {
+  // Remove the "active" class from all cards
+  cards.forEach((card, i) => {
+    card.classList.remove("active");
+  });
+
+  // Add the "active" class to the target card
+  cards[index].classList.add("active");
+}
+
+document.querySelector(".next-button").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % cards.length; // Loop back to the start
+  showCard(currentIndex);
+});
+
+document.querySelector(".prev-button").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + cards.length) % cards.length; // Loop to the end
+  showCard(currentIndex);
 });
