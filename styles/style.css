@@ -875,30 +875,29 @@ drop down menu
   padding-right: 7.5%;/*changed*/
 }
 .project-page-title {
-  font-size: calc(3rem+2vw);
+  font-size: calc(3rem + 2vw);
   font-family: var(--heading-typeface);
   font-weight: 400;
   letter-spacing: normal;
   margin-bottom: 1rem;
 }
 .project-date {
-  font-size: calc(1rem+2vw);
+  font-size: calc(.5rem + 2.5vw);
   font-family: var(--heading-typeface);
   font-weight: 400;
   letter-spacing: normal;
 }
 .details {
-  line-height: 1rem;
+  line-height: 2rem;
 }
 .project-genre {
-  font-size: calc(.5rem+2.5vw);
+  font-size: calc(.5rem + 2.5vw);
   font-family: var(--heading-typeface);
   font-weight: 400;
-  line-height: 1rem;
   letter-spacing: normal;
 }
 .collaborators {
-  font-size: 1.5rem;
+  font-size: calc(.5rem + 2.5vw);
   font-family: var(--heading-typeface);
   font-weight: 400;
   letter-spacing: normal;
@@ -909,6 +908,24 @@ drop down menu
   font-weight: 400;
   width: 100%;
   letter-spacing: normal;
+}
+.project-explanation {
+  width: 30%;
+  height: 100%;
+  /* background-color: darkblue; */
+  transition: opacity 0.2s ease-in-out; /* Smooth transition */
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+  flex-direction: column;
+}
+.heading-text{
+  font-size: 1.5rem;
+  font-family: var(--body-typeface);
+  font-weight:600;
+  letter-spacing: normal;
+  padding: 0px 3vw 0px 3vw;
+  margin:0;
 }
 .explanation-text {
   font-size: 1.5rem;
@@ -969,15 +986,6 @@ drop down menu
   bottom: 0;
   top: 20vh;
   right: 0;
-}
-.project-explanation {
-  width: 30%;
-  height: 100%;
-  /* background-color: darkblue; */
-  transition: opacity 0.2s ease-in-out; /* Smooth transition */
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .project-visuals {
   transition: opacity 0.2s ease-in-out;
@@ -1561,6 +1569,22 @@ a.sub-navigation-link:hover {
     width: 50vw;
     letter-spacing: normal;
   }
+  .project-explanation {
+    width: 30%;
+    height: 100%;
+    /* background-color: darkblue; */
+    transition: opacity 0.2s ease-in-out; /* Smooth transition */
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+  }
+  .heading-text{
+    font-size: 3.5rem;
+    font-family: var(--body-typeface);
+    font-weight:600;
+    letter-spacing: normal;
+    padding: 0px 3vw 0px 3vw;
+  }
   .explanation-text {
     font-size: 1.5rem;
     font-family: var(--body-typeface);
@@ -1620,15 +1644,6 @@ a.sub-navigation-link:hover {
     bottom: 0;
     top: 20vh;
     right: 0;
-  }
-  .project-explanation {
-    width: 30%;
-    height: 100%;
-    /* background-color: darkblue; */
-    transition: opacity 0.2s ease-in-out; /* Smooth transition */
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   .project-visuals {
     transition: opacity 0.2s ease-in-out;
