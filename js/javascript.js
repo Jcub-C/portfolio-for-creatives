@@ -98,49 +98,22 @@ document.addEventListener("click", function (event) {
 });
 
 //projects scroll fade
+// Function to handle fading of elements based on scroll position
 function handleScrollFade() {
   const elements = [
-    {
-      target: document.getElementById("target-element1"),
-      trigger: document.getElementById("trigger-selection1"),
-    },
-    {
-      target: document.getElementById("target-element2"),
-      trigger: document.getElementById("trigger-selection2"),
-    },
-    {
-      target: document.getElementById("target-element3"),
-      trigger: document.getElementById("trigger-selection3"),
-    },
-    {
-      target: document.getElementById("target-element4"),
-      trigger: document.getElementById("trigger-selection4"),
-    },
-    {
-      target: document.getElementById("target-element5"),
-      trigger: document.getElementById("trigger-selection5"),
-    },
-    {
-      target: document.getElementById("target-element6"),
-      trigger: document.getElementById("trigger-selection6"),
-    },
-    {
-      target: document.getElementById("target-element7"),
-      trigger: document.getElementById("trigger-selection7"),
-    },
-    {
-      target: document.getElementById("target-element8"),
-      trigger: document.getElementById("trigger-selection8"),
-    },
-    {
-      target: document.getElementById("target-element9"),
-      trigger: document.getElementById("trigger-selection9"),
-    },
-    {
-      target: document.getElementById("target-element10"),
-      trigger: document.getElementById("trigger-selection10"),
-    },
+    { target: document.getElementById("target-element1"), trigger: document.getElementById("trigger-selection1") },
+    { target: document.getElementById("target-element2"), trigger: document.getElementById("trigger-selection2") },
+    { target: document.getElementById("target-element3"), trigger: document.getElementById("trigger-selection3") },
+    { target: document.getElementById("target-element4"), trigger: document.getElementById("trigger-selection4") },
+    { target: document.getElementById("target-element5"), trigger: document.getElementById("trigger-selection5") },
+    { target: document.getElementById("target-element6"), trigger: document.getElementById("trigger-selection6") },
+    { target: document.getElementById("target-element7"), trigger: document.getElementById("trigger-selection7") },
+    { target: document.getElementById("target-element8"), trigger: document.getElementById("trigger-selection8") },
+    { target: document.getElementById("target-element9"), trigger: document.getElementById("trigger-selection9") },
+    { target: document.getElementById("target-element10"), trigger: document.getElementById("trigger-selection10") },
   ];
+
+  // Define thresholds for opacity changes
   const fadeInStart = window.innerHeight * 0.05;
   const fullOpacityStart = window.innerHeight * 0.1;
   const fadeOutStart = window.innerHeight * 0.9;
@@ -152,43 +125,50 @@ function handleScrollFade() {
       return;
     }
 
+    // Get the vertical position of the trigger element
     const triggerPosition = trigger.getBoundingClientRect().top;
     let opacity;
 
     if (triggerPosition >= fadeInStart && triggerPosition <= fullOpacityStart) {
-      opacity =
-        (triggerPosition - fadeInStart) / (fullOpacityStart - fadeInStart);
-    } else if (
-      triggerPosition > fullOpacityStart &&
-      triggerPosition <= fadeOutStart
-    ) {
+      opacity = (triggerPosition - fadeInStart) / (fullOpacityStart - fadeInStart);
+    } else if (triggerPosition > fullOpacityStart && triggerPosition <= fadeOutStart) {
       opacity = 1;
-    } else if (
-      triggerPosition > fadeOutStart &&
-      triggerPosition <= fadeOutEnd
-    ) {
-      opacity =
-        1 - (triggerPosition - fadeOutStart) / (fadeOutEnd - fadeOutStart);
+    } else if (triggerPosition > fadeOutStart && triggerPosition <= fadeOutEnd) {
+      opacity = 1 - (triggerPosition - fadeOutStart) / (fadeOutEnd - fadeOutStart);
     } else {
       opacity = 0;
     }
 
-    target.style.opacity = opacity;
+    target.style.opacity = opacity.toFixed(2); // Ensure opacity is a valid number
   });
 }
 
-// Media query check
+// Media query check and event listener setup
 function setupScrollListener() {
   const isDesktop = window.matchMedia("(min-width: 768px)").matches;
 
   if (isDesktop) {
-    // Add the scroll event listener if on desktop
+    // Add the scroll event listener for desktop view
     window.addEventListener("scroll", handleScrollFade);
   } else {
-    // Remove the scroll event listener if not on desktop
+    // Remove the scroll event listener for mobile view
     window.removeEventListener("scroll", handleScrollFade);
+
+    // Reset opacity of all target elements on mobile
+    const targets = document.querySelectorAll("[id^='target-element']");
+    targets.forEach(target => {
+      if (target) target.style.opacity = "1"; // Fully visible
+    });
   }
 }
+
+// Attach media query listener to dynamically apply changes
+const mediaQuery = window.matchMedia("(min-width: 768px)");
+mediaQuery.addEventListener("change", setupScrollListener);
+
+// Initial setup
+setupScrollListener();
+
 
 // Initial setup and re-check on window resize
 setupScrollListener();

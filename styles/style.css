@@ -861,7 +861,8 @@ drop down menu
   z-index: -20;
 }
 .project-hero {
-  height: 140vh;
+  height: fit-content;
+  min-height: fit-content;
   width: 100%;
   background-image: none; /*changed*/
   background-position: center; /*changed*/
@@ -906,7 +907,7 @@ drop down menu
   font-weight: 400;
   line-height: 7vw;
   letter-spacing: normal;
-  margin-bottom: 5vh;
+  margin-bottom: .5vh;
 }
 .project-headline {
   font-size: 4.3vw;
@@ -1060,19 +1061,21 @@ drop down menu
 }
 
 .card .carousel-desktop-img {
-  width: 400px;
+  width: 90vw;
+  max-width: 400px;
   height: auto;
 }
 
 .card .carousel-mobile-img {
-  width: 400px;
+  width:90vw;
+  max-width: 400px;
   height: auto;
 }
 
 .project-btn {
   position: absolute;
   z-index: 6;
-  top: 50%;
+  top:auto;
   transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
@@ -1082,12 +1085,14 @@ drop down menu
 }
 
 .project-btn.prev-button {
-  left: 10px;
+  left: 1vw;
+  bottom: 3vh;
   pointer-events: all;
 }
 
 .project-btn.next-button {
-  right: 10px;
+  right: 1vw;
+  bottom: 3vh;
   pointer-events: all;
 }
 .carousel-indicators {
@@ -1713,11 +1718,13 @@ a.sub-navigation-link:hover {
 
   .card .carousel-desktop-img {
     width: 60%;
+    max-width: none;
     height: auto;
   }
 
   .card .carousel-mobile-img {
     width: 16.6%;
+    max-width: none;
     height: auto;
   }
 
@@ -1735,11 +1742,13 @@ a.sub-navigation-link:hover {
 
   .project-btn.prev-button {
     left: 10px;
+    bottom:auto;
     pointer-events: all;
   }
 
   .project-btn.next-button {
     right: 10px;
+    bottom:auto;
     pointer-events: all;
   }
   .carousel-indicators {
