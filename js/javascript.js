@@ -139,7 +139,19 @@ function handleScrollFade() {
       opacity = 0;
     }
 
-    target.style.opacity = opacity.toFixed(2); // Ensure opacity is a valid number
+    // Apply opacity and manage display properties
+    if (opacity > 0) {
+      target.style.display = "flex"; // Set display to flex when visible
+      target.style.opacity = opacity.toFixed(2); // Ensure opacity is a valid number
+    } else {
+      // Wait for the fade-out transition to complete before hiding
+      target.style.opacity = "0";
+      setTimeout(() => {
+        if (target.style.opacity === "0") {
+          target.style.display = "none"; // Hide only when opacity is 0
+        }
+      }, 300); // Match this to your CSS transition duration
+    }
   });
 }
 
@@ -154,13 +166,21 @@ function setupScrollListener() {
     // Remove the scroll event listener for mobile view
     window.removeEventListener("scroll", handleScrollFade);
 
-    // Reset opacity of all target elements on mobile
+    // Reset opacity and display of all target elements on mobile
     const targets = document.querySelectorAll("[id^='target-element']");
     targets.forEach(target => {
-      if (target) target.style.opacity = "1"; // Fully visible
+      if (target) {
+        target.style.opacity = "1"; // Fully visible
+        target.style.display = "flex"; // Ensure they remain visible
+      }
     });
   }
 }
+
+// Call setupScrollListener initially and on window resize
+setupScrollListener();
+window.addEventListener("resize", setupScrollListener);
+
 
 // Attach media query listener to dynamically apply changes
 const mediaQuery = window.matchMedia("(min-width: 768px)");
@@ -176,25 +196,131 @@ window.addEventListener("resize", setupScrollListener);
 
 //project carousel
 
-const cards = document.querySelectorAll(".card");
-let currentIndex = 0;
+document.querySelectorAll(".carousel").forEach((carousel) => {
+  // Get elements scoped to this specific carousel
+  const cards = carousel.querySelectorAll(".card");
+  const nextButton = carousel.querySelector(".next-button");
+  const prevButton = carousel.querySelector(".prev-button");
+  let currentIndex = 0;
 
-function showCard(index) {
-  // Remove the "active" class from all cards
-  cards.forEach((card, i) => {
-    card.classList.remove("active");
-  });
+  // Function to show a specific card
+  function showCard(index) {
+    cards.forEach((card) => card.classList.remove("active"));
+    cards[index].classList.add("active");
+  }
 
-  // Add the "active" class to the target card
-  cards[index].classList.add("active");
-}
+  // Add event listeners scoped to this carousel's buttons
+  if (nextButton && prevButton) {
+    nextButton.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % cards.length; // Loop to the start
+      showCard(currentIndex);
+    });
 
-document.querySelector(".next-button").addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % cards.length; // Loop back to the start
+    prevButton.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + cards.length) % cards.length; // Loop to the end
+      showCard(currentIndex);
+    });
+  }
+
+  // Show the first card initially
   showCard(currentIndex);
 });
 
-document.querySelector(".prev-button").addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + cards.length) % cards.length; // Loop to the end
-  showCard(currentIndex);
-});
+
+// // Carousel 1
+// const cardsCarousel1 = document.querySelectorAll(".carousel-1 .card");
+// let currentIndexCarousel1 = 0;
+
+// document.querySelector(".next-button-carousel-1").addEventListener("click", () => {
+//   currentIndexCarousel1 = (currentIndexCarousel1 + 1) % cardsCarousel1.length;
+//   updateActiveCard(cardsCarousel1, currentIndexCarousel1);
+// });
+
+// document.querySelector(".prev-button-carousel-1").addEventListener("click", () => {
+//   currentIndexCarousel1 = (currentIndexCarousel1 - 1 + cardsCarousel1.length) % cardsCarousel1.length;
+//   updateActiveCard(cardsCarousel1, currentIndexCarousel1);
+// });
+
+// // Carousel 2
+// const cardsCarousel2 = document.querySelectorAll(".carousel-2 .card");
+// let currentIndexCarousel2 = 0;
+
+// document.querySelector(".next-button-carousel-2").addEventListener("click", () => {
+//   currentIndexCarousel2 = (currentIndexCarousel2 + 1) % cardsCarousel2.length;
+//   updateActiveCard(cardsCarousel2, currentIndexCarousel2);
+// });
+
+// document.querySelector(".prev-button-carousel-2").addEventListener("click", () => {
+//   currentIndexCarousel2 = (currentIndexCarousel2 - 1 + cardsCarousel2.length) % cardsCarousel2.length;
+//   updateActiveCard(cardsCarousel2, currentIndexCarousel2);
+// });
+
+// // Function to update active card
+// function updateActiveCard(cards, index) {
+//   cards.forEach((card) => card.classList.remove("active"));
+//   cards[index].classList.add("active");
+// }
+
+
+
+
+
+// document.querySelectorAll(".project-visuals.carousel").forEach((carousel) => {
+//   const cards = carousel.querySelectorAll(".card");
+//   const nextButton = carousel.querySelector(".next-button");
+//   const prevButton = carousel.querySelector(".prev-button");
+//   let currentIndex = 0;
+//   let isTransitioning = false;
+
+//   function debounce(callback, delay) {
+//     if (isTransitioning) return;
+//     isTransitioning = true;
+//     callback();
+//     setTimeout(() => (isTransitioning = false), delay);
+//   }
+
+//   function showCard(index) {
+//     cards.forEach((card) => card.classList.remove("active"));
+//     cards[index].classList.add("active");
+//   }
+
+//   nextButton.addEventListener("click", () => {
+//     debounce(() => {
+//       currentIndex = (currentIndex + 1) % cards.length;
+//       showCard(currentIndex);
+//     }, 500);
+//   });
+
+//   prevButton.addEventListener("click", () => {
+//     debounce(() => {
+//       currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+//       showCard(currentIndex);
+//     }, 500);
+//   });
+
+//   showCard(currentIndex);
+// });
+
+
+// const cards = document.querySelectorAll(".card");
+// let currentIndex = 0;
+
+// function showCard(index) {
+//   // Remove the "active" class from all cards
+//   cards.forEach((card, i) => {
+//     card.classList.remove("active");
+//   });
+
+//   // Add the "active" class to the target card
+//   cards[index].classList.add("active");
+// }
+
+// document.querySelector(".next-button").addEventListener("click", () => {
+//   currentIndex = (currentIndex + 1) % cards.length; // Loop back to the start
+//   showCard(currentIndex);
+// });
+
+// document.querySelector(".prev-button").addEventListener("click", () => {
+//   currentIndex = (currentIndex - 1 + cards.length) % cards.length; // Loop to the end
+//   showCard(currentIndex);
+// });

@@ -839,6 +839,9 @@ drop down menu
 .light {
   color: white;
 }
+.dark {
+  color: #000;
+}
 .project-hero-image {
   position: relative;
   margin-top: 0;
@@ -846,7 +849,6 @@ drop down menu
   height: 50vh;
   position: relative;
   border: none;
-  background: #000;
   object-fit: cover;
   overflow: clip;
   margin-left: 0vw;
@@ -999,6 +1001,7 @@ drop down menu
   position: relative;
   overflow: visible;
   background-color: var(--bg-color);
+  gap:4vw;
 }
 .project-visuals .svgator-animation {
   height: auto;
@@ -1039,6 +1042,7 @@ drop down menu
 }
 .carousel {
   height: 1000px;
+  position: relative;
 }
 .card {
   position: absolute;
@@ -1077,7 +1081,7 @@ drop down menu
   z-index: 6;
   top:auto;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
+  /* background: rgba(0, 0, 0, 0.5); */
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -1095,6 +1099,7 @@ drop down menu
   bottom: 3vh;
   pointer-events: all;
 }
+
 .carousel-indicators {
   text-align: center;
   margin-top: 10px;
@@ -1102,7 +1107,15 @@ drop down menu
 
 /**/
 .susan-bg {
+  background-image: url(../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-hero.JPG);
+  background-color: #000;
 }
+
+.thirty-30-bg{
+  background-image: url(../assets/project-images/3030/jacob-chong-ui-ux-30-30-vancouver-bc-capilano-university-2024-cover-image.jpg);
+  background-color: #fff;
+}
+
 /*
 ███████╗████████╗██╗   ██╗██╗     ███████╗     ██████╗ ██╗   ██╗██╗██████╗ ███████╗
 ██╔════╝╚══██╔══╝╚██╗ ██╔╝██║     ██╔════╝    ██╔════╝ ██║   ██║██║██╔══██╗██╔════╝
@@ -1546,6 +1559,9 @@ a.sub-navigation-link:hover {
   .light {
     color: white;
   }
+  .dark {
+    color:#000;
+  }
   .project-page {
     pointer-events: none;
   }
@@ -1560,11 +1576,9 @@ a.sub-navigation-link:hover {
   .project-hero {
     height: 80vh;
     width: 100%;
-    background-image: url(../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-hero.JPG);
     background-position: right;
     background-repeat: no-repeat;
-    background-color: #000;
-    background-size: 80%;
+    background-size: 68%;
     margin-top: -1.2vh;
     position: relative;
     z-index: -4;
