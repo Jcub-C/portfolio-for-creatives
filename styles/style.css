@@ -736,6 +736,10 @@ drop down menu
   opacity: 1;
   width: 80%;
 }
+.poster {
+  height:auto;
+  width:20%;
+}
 
 /* 
 
