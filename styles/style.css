@@ -104,8 +104,9 @@ html {
 
   /*project stuff*/
   --project-image-1: url(/assets/prep-photos/jacob-chong_3030_prep_image.jpg);
-  --project-image-2: url(/assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-logo.svg);
-  --project-image-3: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/316293/phone.jpg);
+  --project-image-2: url(/assets/prep-photos/susan rodgers.jpg);
+  --project-image-3: url(/assets/prep-photos/lil wood diner cover.jpg);
+  --project-image-4: url(/assets/prep-photos/hero cover.jpg);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -682,7 +683,8 @@ drop down menu
 }
 .portfolioPiece1,
 .portfolioPiece2,
-.portfolioPiece3 {
+.portfolioPiece3,
+.portfolioPiece4 {
   position: relative;
   display: flex;
   opacity: 1;
@@ -721,6 +723,9 @@ drop down menu
 }
 .project-image-3 {
   background-image: var(--project-image-3);
+}
+.project-image-4 {
+  background-image: var(--project-image-4);
 }
 .keyInfo {
   display: flex;
@@ -850,7 +855,7 @@ drop down menu
   position: relative;
   margin-top: 0;
   width: 100%;
-  height: 50vh;
+  height: 80%;
   position: relative;
   border: none;
   object-fit: cover;
@@ -866,7 +871,8 @@ drop down menu
   position: relative;
   z-index: -20;
 }
-.project-hero {
+.project-hero,
+.project-hero-light {
   height: fit-content;
   min-height: fit-content;
   width: 100%;
@@ -885,6 +891,9 @@ drop down menu
   padding-bottom: 0%; /*changed*/
   padding-right: 8.5%; /*changed*/
   margin-bottom: -10vh;
+}
+.project-hero-light{
+  background-color: #fff;
 }
 .project-page-title {
   font-family: var(--heading-typeface);
@@ -1013,7 +1022,8 @@ drop down menu
   /* border: var(--primary-color) 1px solid; */
   filter: drop-shadow(1px 1px 2px var(--text-color));
 }
-.project-visuals .image {
+.project-visuals .image,
+.project-visuals .image2 {
   width: 80vw;
   height: auto;
 }
@@ -1111,13 +1121,33 @@ drop down menu
 
 /**/
 .susan-bg {
-  background-image: url(../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-hero.JPG);
+  background-image: none;
   background-color: #000;
+}
+.lil-wood-bg {
+  background-image: none;
+  background-color: var(--bg-color);
 }
 
 .thirty-30-bg{
-  background-image: url(../assets/project-images/3030/jacob-chong-ui-ux-30-30-vancouver-bc-capilano-university-2024-cover-image.jpg);
+  background-image: none;
   background-color: #fff;
+}
+.vimeo-wrapper{
+  padding-bottom: 56.25%; /* For 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+.vimeo-wrapper iframe {
+  pointer-events: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Ensure iframe is above other elements */
+  pointer-events: auto; /* Explicitly enable pointer events */
 }
 
 /*
@@ -1266,7 +1296,7 @@ a.sub-navigation-link:hover {
   place-items: center;
 }
 
-.image {
+.image,.image2 {
   width: 40%;
 }
 
@@ -1412,6 +1442,24 @@ a.sub-navigation-link:hover {
     margin: 8vh 0 0 0;
     width: 25vw;
   }
+  .susan-bg {
+    background-image: url(../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-hero.JPG);
+    background-color: #000;
+  }
+  .lil-wood-bg {
+    background-image: url(../assets/project-images/lil-wood/jacob-chong-lil-wood-hero.png);
+    background-color: var(--bg-color);
+  }
+  
+  .thirty-30-bg{
+    background-image: url(../assets/project-images/3030/jacob-chong-ui-ux-30-30-vancouver-bc-capilano-university-2024-cover-image.jpg);
+    background-color: #fff;
+  }
+  .last-minute-bg{
+    background-image: url(../assets/project-images/last-minute/jacob-chong-last-minute-hero.png);
+    background-color: #fff;
+  }
+  
   /* titles
       ██████ ████ ██████ ██  ████  
         ██    ██    ██   ██  ███ 
@@ -1430,7 +1478,8 @@ a.sub-navigation-link:hover {
   }
   #project-title-1,
   #project-title-2,
-  #project-title-3 {
+  #project-title-3,
+  #project-title-4 {
     transition: background-color 0.2s ease, transform 0.2s ease;
     -webkit-transition: background-color 0.2s ease, transform 0.2s ease;
     -ms-transition: background-color 0.2s ease, transform 0.2s ease;
@@ -1442,7 +1491,8 @@ a.sub-navigation-link:hover {
   }
   #project-title-1:hover,
   #project-title-2:hover,
-  #project-title-3:hover {
+  #project-title-3:hover,
+  #project-title-4:hover {
     transform: translate(-5px, -5px);
     background-color: var(--secondary-color);
   }
@@ -1488,7 +1538,8 @@ a.sub-navigation-link:hover {
   }
   .portfolioPiece1,
   .portfolioPiece2,
-  .portfolioPiece3 {
+  .portfolioPiece3,
+  .portfolioPiece4 {
     position: absolute;
     top: 0vw;
     bottom: 0vw;
@@ -1513,6 +1564,11 @@ a.sub-navigation-link:hover {
   }
   .portfolioPiece3 {
     background-image: var(--project-image-3);
+    display: none;
+    z-index: -2;
+  }
+  .portfolioPiece4 {
+    background-image: var(--project-image-4);
     display: none;
     z-index: -2;
   }
@@ -1577,7 +1633,11 @@ a.sub-navigation-link:hover {
     position: relative;
     z-index: -20;
   }
-  .project-hero {
+  .hero-wrapper light {
+    background-color: #fff;
+  }
+  .project-hero,
+  .project-hero-light {
     height: 80vh;
     width: 100%;
     background-position: right;
@@ -1681,11 +1741,14 @@ a.sub-navigation-link:hover {
     overflow: hidden;
     background-color: var(--bg-color);
   }
-  .project-visuals .image,
+  .project-visuals .image,.project-visuals .image2, 
   .project-visuals .svgator-animation {
     height: 50vh;
     /* border: var(--primary-color) 1px solid; */
     filter: drop-shadow(1px 1px 2px var(--text-color));
+  }
+  .project-visuals .image2{
+    height: 40vh;
   }
 
   /* Project Page Flex Direction on Large Devices */
