@@ -715,17 +715,16 @@ drop down menu
   background-position: center;
 }
 .project-image-1 {
-  background-image: var(--project-image-1);
+  background-image: url("/assets/prep-photos/3030-cover.png");
 }
 .project-image-2 {
-  background-image: var(--project-image-2);
-  background-size: 60%;
+  background-image: url("/assets/prep-photos/susan rodgers.png");
 }
 .project-image-3 {
-  background-image: var(--project-image-3);
+  background-image: url("/assets/prep-photos/lil wood diner cover.png");
 }
 .project-image-4 {
-  background-image: var(--project-image-4);
+  background-image: url("/assets/prep-photos/hero cover.jpg");
 }
 .keyInfo {
   display: flex;
@@ -1553,22 +1552,20 @@ a.sub-navigation-link:hover {
     background-position: center;
   }
   .portfolioPiece1 {
-    background-image: var(--project-image-1);
+    background-image: url("/assets/prep-photos/3030-cover.png");
   }
   .portfolioPiece2 {
-    background-image: var(--project-image-2);
-    background-size: 60%;
-    margin-top: -5vh;
+    background-image: url("/assets/prep-photos/susan rodgers.png");
     display: none;
     z-index: -2;
   }
   .portfolioPiece3 {
-    background-image: var(--project-image-3);
+    background-image: url("/assets/prep-photos/lil wood diner cover.png");
     display: none;
     z-index: -2;
   }
   .portfolioPiece4 {
-    background-image: var(--project-image-4);
+    background-image:url("/assets/prep-photos/hero cover.jpg");
     display: none;
     z-index: -2;
   }
