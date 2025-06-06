@@ -325,9 +325,4 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
 //   showCard(currentIndex);
 // });
 /* stuff to allow scroll on canvas on home page */
-const canvas = document.querySelector("canvas");
 
-canvas.addEventListener("wheel", function (e) {
-  // Allow scroll to pass through the canvas
-  e.stopPropagation(); // optional, depends on where you attach scroll
-}, { passive: true });
