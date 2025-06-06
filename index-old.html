@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <!--SEO Stuff-->
     <title>Jacob Chong | Vancouver Based UI/UX & Interactive Designer | Work Page</title>
-    <meta charset="UTF-8" />
     <meta
       name="description"
       content="Jacob Chong is a Vancouver Based Designer, a Fourth-Year Student at Capilano University, and has passion for Motion Graphics and Interactive Design"
     />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:image" content="screenshot.jpg" /> <!--Change content 
     later-->
@@ -20,6 +19,7 @@
       src="https://kit.fontawesome.com/8db9ce5559.js"
       crossorigin="anonymous"
     ></script>
+
     <script>
       (function() {
         const colorMode = localStorage.getItem("colorMode");
@@ -41,18 +41,6 @@
     </script>
     <!--link to css style sheet-->
     <link rel="stylesheet" href="./styles/style.css" />
-    <style>
-      /* body {
-        margin: 0;
-				overflow: hidden;
-      }
-      html, body {
-        height: 100%;
-      } */
-      /* canvas {
-        display: block;
-      } */
-    </style>
 
     <!--link to javascript-->
     <script src="./js/jquery-3.7.1.min.js" defer></script>
@@ -61,8 +49,9 @@
     <script src="./js/color-change.js" defer></script>
     <script src="./js/size-change.js" defer></script>
   </head>
+
   <body class="work-page">
-    <!--  
+      <!--  
   ███╗   ██╗ █████╗ ██╗   ██╗
   ████╗  ██║██╔══██╗██║   ██║
   ██╔██╗ ██║███████║██║   ██║
@@ -73,7 +62,7 @@
     <section class="nav">
       <header class="nav-header">
         <nav class="navwrapper">
-          <div id="navbar-home"class="navbar">
+          <div class="navbar">
             <div class="logo">
               <a href="../index.html" class="homeLink">
                 <span class="logo-span">
@@ -1076,44 +1065,72 @@
         </nav>
       </header>
     </section>
-    <!--spline stuff-->
-    <section class="spline-window">
-      <canvas id="canvas3d"></canvas>
-      <script type="module">
-        import { Application } from './runtime.js';
-        const canvas = document.getElementById('canvas3d');
-        const app = new Application(canvas);
-        app.load('./scene.splinecode');
-      </script>
-    </section>
-    <!-- extra context -->
-    <section class="home-content">
-      <div class="project-block">
-        <h1>Grad Video</h1>
-        <img>
-        <p>This is description text about the project</p>
-      </div>
-      <div class="project-block">
-        <h1>30/30</h1>
-        <img>
-        <p>This is description text about the project</p>
-      </div>
-      <div class="project-block">
-        <h1>Susan Rodgers</h1>
-        <img>
-        <p>This is description text about the project</p>
-      </div>
-      <div class="project-block">
-        <h1>Lil Wood Diner</h1>
-        <img>
-        <p>This is description text about the project</p>
-      </div>
-      <div class="project-block">
-        <h1>Last Minute</h1>
-        <img>
-        <p>This is description text about the project</p>
-      </div>
-    </section>
+
+    <main class="home-page-wrapper content">
+      <header class="project-info">
+        <!--  
+  ██╗███╗   ██╗████████╗██████╗  ██████╗ 
+  ██║████╗  ██║╚══██╔══╝██╔══██╗██╔═══██╗
+  ██║██╔██╗ ██║   ██║   ██████╔╝██║   ██║
+  ██║██║╚██╗██║   ██║   ██╔══██╗██║   ██║
+  ██║██║ ╚████║   ██║   ██║  ██║╚██████╔╝
+  ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ 
+            -->
+        <section class="intro">
+          <div class="intro-headline-wrapper">
+            <h2 class="body-text-1">
+                Jacob Chongs is a interactive designer eager to put his skill to work wherever the winds of work may take him.
+            </h1>
+          </div>
+        </section>
+
+        <section class="project-titles">
+          <ul class="project-navigation">
+            <li id="project-title-1" class="project-item">
+              <a href="30-30.html" class="item">
+                <h2 class="project-title">30/30</h2>
+              </a>
+            </li>
+            <li id="project-title-2" class="project-item">
+              <a href="susan-rodgers.html" class="item">
+                <h2 class="project-title">Susan Rodgers</h2>
+              </a>
+            </li>
+            <li id="project-title-3" class="project-item">
+              <a href="lil-wood-diner.html" class="item">
+                <h2 class="project-title">Lil Wood Diner</h2>
+              </a>
+            </li>
+            <li id="project-title-4" class="project-item">
+              <a href="last-minute.html" class="item">
+                <h2 class="project-title">Last Minute</h2>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </header>
+
+<!--
+  ██╗    ██╗ ██████╗ ██████╗ ██╗  ██╗
+  ██║    ██║██╔═══██╗██╔══██╗██║ ██╔╝
+  ██║ █╗ ██║██║   ██║██████╔╝█████╔╝ 
+  ██║███╗██║██║   ██║██╔══██╗██╔═██╗ 
+  ╚███╔███╔╝╚██████╔╝██║  ██║██║  ██╗
+   ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+-->
+
+      <section class="portfolio">
+        <div class="clickable-area">
+          <a class="project-link" href="susan-rodgers.html">
+            <div class="portfolio-wrapper">
+              <div class="portfolioPiece1" id="project1"></div>
+              <div class="portfolioPiece2" id="project2"></div>
+              <div class="portfolioPiece3" id="project3"></div>
+              <div class="portfolioPiece4" id="project4"></div>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
-  

@@ -534,6 +534,9 @@ brand logo
   height: 17vw;
   width: 100%;
 }
+#navbar-home {
+  background-color: transparent;
+}
 .logo-span {
   display: flex;
   justify-content: flex-start;
@@ -621,6 +624,18 @@ drop down menu
 ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝                                            
 
 */
+.spline-window{
+  display: block;
+  height: 100vh;
+  width: 100%;
+  margin-top:-11vw;
+}
+canvas{
+  display:block;
+}
+.project-block{
+  height:80vh;
+}
 .work-page {
   max-height: 100vh;
   position: relative;
