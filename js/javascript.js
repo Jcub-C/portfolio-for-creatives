@@ -326,3 +326,20 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
 // });
 /* stuff to allow scroll on canvas on home page */
 
+//for home page hover gif play
+
+  // Get all project blocks
+const projectBlocks = document.querySelectorAll('.project-block');
+
+  projectBlocks.forEach(block => {
+    const video = block.querySelector('video');
+    if (!video) return;
+
+    block.addEventListener('mouseenter', () => {
+      video.play();
+    });
+
+    block.addEventListener('mouseleave', () => {
+      video.pause(); // do NOT reset to start
+    });
+  });
