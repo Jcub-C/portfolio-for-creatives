@@ -1,79 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <!--SEO Stuff-->
-    <title>Jacob Chong | Vancouver Based UI/UX & Interactive Designer | Work Page</title>
-    <meta charset="UTF-8" />
+    <title>
+      Jacob Chong | Vancouver Based UI/UX & Interactive Designer | Proffesional
+      Portfolio Site Made with Webflow
+    </title>
     <meta
       name="description"
-      content="Jacob Chong is a Vancouver Based Designer, a Fourth-Year Student at Capilano University, and has passion for Motion Graphics and Interactive Design"
+      content="A portfolio website made for writer, director, producer, author, Susan Rodgers using Webflow"
     />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:image" content="screenshot.jpg" /> <!--Change content 
-    later-->
-    <link rel="icon" type="image/x-icon" href="assets/branding-images/jcubcreative-favicon.ico">
+    <meta property="og:image" content="screenshot.jpg" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/branding-images/jcubcreative-favicon.ico"
+    />
+    <!--Change content later-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
     />
+    <!-- <link rel="stylesheet" href="./styles/brand-colors.css" /> -->
     <script
       src="https://kit.fontawesome.com/8db9ce5559.js"
       crossorigin="anonymous"
     ></script>
+    <style>
+      :root {
+        --bg-color: #ffffff;
+        --bg-color2: #f5f5f5;
+        --text-color: #333333;
+        --primary-color: #0000ff;
+        --secondary-color: #ffcc00;
+      }
+    </style>
     <script>
-      (function() {
+      (function () {
         const colorMode = localStorage.getItem("colorMode");
         if (colorMode === "1") {
-          document.documentElement.style.setProperty("--bg-color", "var(--dark)");
-          document.documentElement.style.setProperty("--bg-color2", "var(--dark-grey)");
-          document.documentElement.style.setProperty("--text-color", "var(--light-grey)");
-          document.documentElement.style.setProperty("--primary-color", "var(--yellow1)");
-          document.documentElement.style.setProperty("--secondary-color", "var(--blue2)");
-          document.documentElement.style.setProperty("--link-color", "var(--yellow2)");
-        } else {
-          document.documentElement.style.setProperty("--bg-color", "var(--light)");
-          document.documentElement.style.setProperty("--bg-color2", "var(--light-grey)");
-          document.documentElement.style.setProperty("--text-color", "var(--dark)");
-          document.documentElement.style.setProperty("--primary-color", "var(--blue1)");
-          document.documentElement.style.setProperty("--secondary-color", "var(--yellow1)");
+          document.documentElement.style.setProperty("--bg-color", "#333333");
+          document.documentElement.style.setProperty("--bg-color2", "#2a2a2a");
+          document.documentElement.style.setProperty("--text-color", "#f5f5f5");
+          document.documentElement.style.setProperty(
+            "--primary-color",
+            "#ffcc00"
+          );
+          document.documentElement.style.setProperty(
+            "--secondary-color",
+            "#0000ff"
+          );
         }
       })();
     </script>
     <!--link to css style sheet-->
-    <link rel="stylesheet" href="./styles/style.css" />
-    <style>
-      /* body {
-        margin: 0;
-				overflow: hidden;
-      }
-      html, body {
-        height: 100%;
-      } */
-      /* canvas {
-        display: block;
-      } */
-    </style>
+    <link rel="stylesheet" href="../styles/style.css" />
 
     <!--link to javascript-->
-    <script src="./js/jquery-3.7.1.min.js" defer></script>
-    <script src="./js/javascript.js" defer></script>
-    <script src="./js/project_replace.js" defer></script>
-    <script src="./js/color-change.js" defer></script>
-    <script src="./js/size-change.js" defer></script>
+    <script src="../js/jquery-3.7.1.min.js" defer></script>
+    <script src="../js/javascript.js" defer></script>
+    <script src="../js/color-change.js" defer></script>
+    <script src="../js/size-change.js" defer></script>
+
   </head>
-  <body class="work-page">
-    <!--  
+
+  <body class="project-page">
+    <!--
   ███╗   ██╗ █████╗ ██╗   ██╗
   ████╗  ██║██╔══██╗██║   ██║
   ██╔██╗ ██║███████║██║   ██║
   ██║╚██╗██║██╔══██║╚██╗ ██╔╝
-  ██║ ╚████║██║  ██║ ╚████╔╝ 
-  ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  
+  ██║ ╚████║██║  ██║ ╚████╔╝
+  ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝
     -->
     <section class="nav">
       <header class="nav-header">
         <nav class="navwrapper">
-          <div id="navbar-home"class="navbar">
+          <div class="navbar">
             <div class="logo">
               <a href="../index.html" class="homeLink">
                 <span class="logo-span">
@@ -1076,158 +1080,275 @@
         </nav>
       </header>
     </section>
-    <!--spline stuff-->
-    <section class="spline-window">
-      <canvas id="canvas3d"></canvas>
-      <script type="module">
-        import { Application } from './runtime.js';
-        const canvas = document.getElementById('canvas3d');
-        const app = new Application(canvas);
-        app.load('./scene.splinecode');
-      </script>
-    </section>
-    <!-- extra context -->
-    <section class="home-content">
-      <div class="project-block-wrapper">
-        <div class="project-block">
-          <a class="project-content" href="grad-vid.html">
-            <div class="show-case-wrapper">
-              <div class="show-case">
-                <div class="projectinfo">
-                  <h1 class="heading-text2">Grad Video</h1>
-                  <p class="paragraph-text">As part of graduating from Capilano University's IDEA program, I created a grad reel to showcase myself. Despite the tight timeline, it was a challenging and rewarding project that I genuinely enjoyed.</p>
-                </div>
-                <div class="project-image-wrapper">
-                  <img>
-                </div>
-              </div>
-              <div class="project-tags">
-                <ul class="tags">
-                    <li class="tag">3D Modeling</li>
-                    <li class="tag">Animation</li>
-                    <li class="tag">Story Boarding</li>
-                    <li class="tag">Editing</li>
-                </ul>
-              </div>
-            </div>
-          </a>
+
+    <!--
+    ██╗  ██╗███████╗██████╗  ██████╗
+    ██║  ██║██╔════╝██╔══██╗██╔═══██╗
+    ███████║█████╗  ██████╔╝██║   ██║
+    ██╔══██║██╔══╝  ██╔══██╗██║   ██║
+    ██║  ██║███████╗██║  ██║╚██████╔╝
+    ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝
+-->
+    <main class="hero-wrapper content">
+      <div class="project-screen-bg mobile-hidden"></div>
+      <header class="project-hero lil-wood-bg">
+        <img
+          class="desktop-hidden project-hero-image"
+          alt="Proffesionaly shot image of Susan Rodgers in a black leather jacket."
+          src="assets/project-images/lil-wood/jacob-chong-lil-wood-logo.png"
+        />
+        <h1 class="project-page-title ">Lil Wood Diner</h1>
+        <h3 class="project-date details ">Spring 2023</h3>
+        <h3 class="project-genre details ">Branding</h3>
+        <h3 class="collaborators details ">
+          
+        </h3>
+        <h3 class="project-headline ">
+          Lil Wood Diner is a playful branding project that reimagines classic diner food using cricket flour as a sustainable alternative ingredient. The concept cleverly ties together the Pinocchio "not a real boy" narrative with "not your traditional pancakes." Drawing inspiration from rubber hose animation aesthetics and 80s/90s diner nostalgia, the brand uses whimsical visuals to make innovative cricket-based comfort foods approachable and appealing to modern consumers seeking eco-conscious alternatives.
+        </h3>
+      </header>
+      <div class="project-screen">
+        <div class="project-trigger">
+          <h1 class="trigger-selection" id="trigger-selection1">trigger</h1>
         </div>
       </div>
-      <div class="project-block-wrapper">
-        <div class="project-block">
-          <a class="project-content" href="30-30.html">
-            <div class="show-case-wrapper">
-              <div class="show-case">
-                <div class="projectinfo">
-                  <h1 class="heading-text2">30/30</h1>
-                  <p class="paragraph-text">Movie scores can often be deceptive and unclear. 30/30 explores a more transparent approach to rating films. This project deepened my appreciation for common UI elements, using Google’s Material Design guidelines as a reference.</p>
-                </div>
-                <div class="project-image-wrapper">
-                  <object
-                    class="project-image"
-                    type="image/svg+xml"
-                    aria-label="old site's nav having its elements broken down and removing any uneeded links to create foundation for the new nav"
-                    data="../assets/project-images/3030/jacob-chong-ui-ux-30-30-vancouver-bc-capilano-university-2024-movie-page-the-green-knight-cast-and-crew.svg"
-                  >
-                    <img
-                      src="../assets/project-images/3030/jacob-chong-ui-ux-30-30-vancouver-bc-capilano-university-2024-movie-page-the-green-knight-cast-and-crew.svg"
-                      alt="old site's nav having its elements broken down and removing any uneeded links to create foundation for the new nav"
-                    />
-                  </object>
-                </div>
-              </div>
-              <div class="project-tags">
-                <ul class="tags">
-                  <li class="tag">UI/UX</li>
-                  <li class="tag">Figma</li>
-                </ul>
-              </div>
-            </div>
-          </a>
+      <div class="project-screen">
+        <div class="project-trigger">
+          <h1 class="trigger-selection" id="trigger-selection2">trigger</h1>
         </div>
       </div>
-      <div class="project-block-wrapper">
-        <div class="project-block">
-          <a class="project-content" href="susan-rodgers.html">
-            <div class="show-case-wrapper">
-              <div class="show-case">
-                <div class="projectinfo">
-                  <h1 class="heading-text2">Susan Rodgers</h1>
-                  <p class="paragraph-text">Susan Rodgers, known for her Drifters book series needed to update her website to better showcase her work as screenwriter, film director and producer. In collaboration with her son I built her a site on Webflow.</p>
-                </div>
-                <div class="project-image-wrapper">
-                  <img
-                    class="project-image"
-                    src="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-home-page-mobile.jpg"
-                    alt="home page mobile"
-                  />
-                </div>
-              </div>
-              <div class="project-tags">
-                <ul class="tags">
-                  <li class="tag">UI/UX</li>
-                  <li class="tag">Webflow</li>
-                </ul>
-              </div>
-            </div>
-          </a>
+      <!--<div class="project-screen">
+        <div class="project-trigger">
+          <h1 class="trigger-selection" id="trigger-selection3">trigger</h1>
         </div>
       </div>
-      <div class="project-block-wrapper">
-        <div class="project-block">
-          <a class="project-content" href="lil-wood-diner.html">
-            <div class="show-case-wrapper">
-              <div class="show-case">
-                <div class="projectinfo">
-                  <h1 class="heading-text2">Lil Wood Diner</h1>
-                  <p class="paragraph-text">Lil Wood Diner reimagines classic diner food with a sustainable twist. Inspired by 80s/90s diner nostalgia, it makes <br>eco-friendly comfort food feel fun and approachable.</p>
-                </div>
-                <div class="project-image-wrapper">
-                   <img
-                    class="project-image"
-                    src="../assets/project-images/lil-wood/jacob-chong-lil-wood-logo.png"
-                    alt="Lil Wood Diner Logo"
-                  />
-                </div>
-              </div>
-              <div class="project-tags">
-                <ul class="tags">
-                  <li class="tag">Branding</li>
-                </ul>
-              </div>
-            </div>
-          </a>
+      <div class="project-screen">
+        <div class="project-trigger">
+          <h1 class="trigger-selection" id="trigger-selection4">trigger</h1>
         </div>
       </div>
-      <div class="project-block-wrapper">
-        <div class="project-block">
-          <a class="project-content" href="last-minute.html">
-            <div class="show-case-wrapper">
-              <div class="show-case">
-                <div class="projectinfo">
-                  <h1 class="heading-text2">Last Minute</h1>
-                  <p class="paragraph-text">A board game of frantic fun. My capstone project utilizes phones to create an engaging game for large groups. Plan a last minute trip with friends packing, booking, and making sure you have a ticket for the flight.</p>
-                </div>
-                <div class="project-image-wrapper">
-                  <video muted preload="metadata" loop class="project-teaser" playsinline class="project-teaser">
-                    <source src="assets/project-images/last-minute/jacob-chong-last-minute-boomerang.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </div>
-              <div class="project-tags">
-                <ul class="tags">
-                  <li class="tag">Branding</li>
-                  <li class="tag">UI/UX</li>
-                  <li class="tag">Game Design</li>
-                  <li class="tag">Packaging</li>
-                </ul>
-              </div>
-            </div>
-          </a>
+      <div class="project-screen">
+        <div class="project-trigger">
+          <h1 class="trigger-selection" id="trigger-selection5">trigger</h1>
         </div>
       </div>
-    </section>
+      <div class="project-screen">
+        <div class="project-trigger">
+          <h1 class="trigger-selection" id="trigger-selection6">trigger</h1>
+        </div>
+      </div>
+      <div class="project-screen">
+        <div class="project-trigger">
+          <h1 class="trigger-selection" id="trigger-selection7">trigger</h1>
+        </div>
+      </div>
+       <div class="project-screen">
+        <div class="project-trigger">
+          <h1 class="trigger-selection" id="trigger-selection8">trigger</h1>
+        </div>
+      </div>
+      <div class="project-screen">
+        <div class="project-trigger">
+          <h1 class="trigger-selection" id="trigger-selection9">trigger</h1>
+        </div>
+      </div>
+      <div class="project-screen">
+        <div class="project-trigger">
+          <h1 class="trigger-selection" id="trigger-selection10">trigger</h1>
+        </div>
+      </div> -->
+
+      <div class="project-texts">
+        <div class="project-show" id="target-element1">
+          <div class="project-explanation">
+            <h3 class="heading-text">Logo</h3>
+            <p class="explanation-text">
+              This logo has been made and reworked dozens of times but at it's core it was to be the face of Pinocchio. I took inspiration from the way Porky Pig from the Looney Toons pops out of the circles at the end of the show.
+            </p>
+          </div>
+          <div class="project-visuals">
+            <img
+              alt="displaying the evolution of the logo"
+              class="image"
+              src="../assets/project-images/lil-wood/lil-wood-logos.png"
+            />
+          </div>
+        </div>
+
+        <div class="project-show" id="target-element2">
+          <div class="project-explanation">
+            <h3 class="heading-text">Blender Bottle</h3>
+            <p class="explanation-text">
+              I wanted to make some collateral that would fit with the diner idea but also allow me more practice with blender. I decided to make a cream soda for the brand.
+            </p>
+          </div>
+          <div class="project-visuals">
+            <img
+            alt="displaying the evolution of the logo"
+            class="image2"
+            src="../assets/project-images/lil-wood/jacob-chong--blender-3d-modeling-branding-lil-wood-diner2.png"
+          />
+            </object>
+          </div>
+        </div>
+        <div class="project-show" id="target-element3">
+          <div class="project-explanation">
+            <h3 class="heading-text">Process</h3>
+            <p class="explanation-text">
+              I removed pages and cut down features that were too specific. The
+              goal was to streamline the site for possible collaborators and
+              professionals.
+            </p>
+          </div>
+          <div class="project-visuals">
+            <object
+              class="svgator-animation"
+              type="image/svg+xml"
+              aria-label="old site's nav having its elements broken down and removing any uneeded links to create foundation for the new nav"
+              data="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-shift-nav.svg"
+            >
+              <img
+                src="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble--hound-2024-film-maker-portfolio-site-shift-nav.svg"
+                alt="old site's nav having its elements broken down and removing any uneeded links to create foundation for the new nav"
+              />
+            </object>
+          </div>
+        </div>
+        <div class="project-show" id="target-element4">
+          <div class="project-explanation">
+            <h3 class="heading-text">Process</h3>
+            <p class="explanation-text">
+              I consolidated content under new section umbrellas for simplicity. I renamed the writing and film sections to provide clarity about her roles in different creative projects. Lastly I added sections to highlight her upcoming work, share a bit about herself, and show contact information.
+            </p>
+          </div>
+          <div class="project-visuals">
+            <object
+              class="svgator-animation"
+              type="image/svg+xml"
+              aria-label="showing how the new nav will function with animation depicting how sections contain content. Shows that the upcoming section shares content with the other sections, like a ven-diagram of shared content."
+              data="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-new-nav.svg"
+            >
+              <img
+                src="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble--hound-2024-film-maker-portfolio-site-new-nav.svg"
+                alt="showing how the new nav will function with animation depicting how sections contain content. Shows that the upcoming section shares content with the other sections, like a ven-diagram of shared content."
+              />
+            </object>
+          </div>
+        </div>
+        <div class="project-show" id="target-element5">
+          <div class="project-explanation">
+            <h3 class="heading-text">Process</h3>
+            <p class="explanation-text">
+              The other big task was to take advantage of the CMS feature within
+              Webflow and sort out the project pages.
+            </p>
+          </div>
+          <div class="project-visuals">
+            <img
+              alt="slide show showing different variations of the project page"
+              class="image"
+              src="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-project-page-process.gif"
+            />
+          </div>
+        </div>
+        <div class="project-show" id="target-element6">
+          <div class="project-explanation">
+            <h3 class="heading-text">After</h3>
+            <p class="explanation-text">
+              The rest of the website ended up being more straightforward. The home page would highlight some of the her latest and upcoming work. The project directory just needed to house a way to navigate to projects. Her about page was short and sweet and the contact page was fun and bold.
+            </p>
+          </div>
+          <div class="project-visuals carousel">
+            <button class="prev-button project-btn" aria-label="Previous Slide">
+              Prev
+            </button>
+            <div class="slider">
+              <div class="card active">
+                <img
+                  class="carousel-desktop-img"
+                  src="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-home-page-desktop.jpg"
+                  alt="home page desktop"
+                />
+                <img
+                  class="carousel-mobile-img"
+                  src="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-home-page-mobile.jpg"
+                  alt="home page mobile"
+                />
+              </div>
+
+              <div class="card">
+                <img
+                  class="carousel-desktop-img"
+                  src="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-project-directory-page-desktop.jpg"
+                  alt="project-directory page desktop"
+                />
+                <img
+                  class="carousel-mobile-img"
+                  src="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-project-directory-page-mobile.jpg"
+                  alt="project-directory page mobile"
+                />
+              </div>
+
+              <div class="card">
+                <img
+                  class="carousel-desktop-img"
+                  src="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-project-page-desktop.jpg"
+                  alt="project page desktop"
+                />
+                <img
+                  class="carousel-mobile-img"
+                  src="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-project-page-mobile.jpg"
+                  alt="project page mobile"
+                />
+              </div>
+
+              <div class="card">
+                <img
+                  class="carousel-desktop-img"
+                  src="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-about-page-desktop.jpg"
+                  alt="about page desktop"
+                />
+                <img
+                  class="carousel-mobile-img"
+                  src="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-about-page-mobile.jpg"
+                  alt="about page mobile"
+                />
+              </div>
+
+              <div class="card">
+                <img
+                  class="carousel-desktop-img"
+                  src="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-contact-page-desktop.jpg"
+                  alt="contact page desktop"
+                />
+                <img
+                  class="carousel-mobile-img"
+                  src="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-contact-page-mobile.jpg"
+                  alt="contact page mobile"
+                />
+              </div>
+            </div>
+            <button class="next-button project-btn" aria-label="Next Slide">
+              Next
+            </button>
+          </div>
+        </div>
+
+
+        <div class="project-show" id="target-element7">
+          <div class="project-explanation">
+            <h3 class="heading-text">The Client's Take</h3>
+            <p class="explanation-text">
+              Jacob Chong jumped in with both feet to develop my brand new website. With my mix of film projects and novels, it was challenging to establish consistency because the images that pertain to my work are varied in colour and style. Jacob came up with a plan to utilize complementary colours in a design that would unify the website and also make it easy to navigate. Now, when I need changes such as new awards added, Jacob dives in and makes the edits almost immediately. He’s got a great attitude and he communicates timely. Best of all, the website is sleek and clean, and professionally reflects myself and my brand. I love sending people to it! <br><br> - Susan Rodgers
+            </p>
+          </div>
+          <div class="project-visuals">
+            <img alt="Image of Susan Rodgers in a Denim jacket with a infectious smile" class="image"
+              src="../assets/project-images/susan-rodgers/jacob-chong-ui-ux-webflow-susan-rodgers-vancouver-bc-humble-hound-2024-film-maker-portfolio-site-testimonial.jpg"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
-  
